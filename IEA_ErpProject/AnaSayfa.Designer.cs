@@ -35,6 +35,7 @@
             this.pnlSol = new System.Windows.Forms.Panel();
             this.scMenu = new System.Windows.Forms.SplitContainer();
             this.tvMenu = new System.Windows.Forms.TreeView();
+            this.btnUrunGiris = new System.Windows.Forms.Button();
             this.btnBilgiGiris = new System.Windows.Forms.Button();
             this.pnlsolUst = new System.Windows.Forms.Panel();
             this.btnSolUstCollapse = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.btnSolUstAra = new System.Windows.Forms.Button();
             this.txtSolUstAra = new System.Windows.Forms.TextBox();
             this.splitter2 = new System.Windows.Forms.Splitter();
-            this.btnUrunGiris = new System.Windows.Forms.Button();
             this.tabPGenel.SuspendLayout();
             this.pnlSol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMenu)).BeginInit();
@@ -135,9 +135,19 @@
             this.tvMenu.TabIndex = 0;
             this.tvMenu.DoubleClick += new System.EventHandler(this.tvMenu_DoubleClick);
             // 
+            // btnUrunGiris
+            // 
+            this.btnUrunGiris.Location = new System.Drawing.Point(99, 3);
+            this.btnUrunGiris.Name = "btnUrunGiris";
+            this.btnUrunGiris.Size = new System.Drawing.Size(79, 52);
+            this.btnUrunGiris.TabIndex = 1;
+            this.btnUrunGiris.Text = "Urun Islemleri";
+            this.btnUrunGiris.UseVisualStyleBackColor = true;
+            this.btnUrunGiris.Click += new System.EventHandler(this.btnUrunGiris_Click);
+            // 
             // btnBilgiGiris
             // 
-            this.btnBilgiGiris.Location = new System.Drawing.Point(10, 15);
+            this.btnBilgiGiris.Location = new System.Drawing.Point(4, 3);
             this.btnBilgiGiris.Name = "btnBilgiGiris";
             this.btnBilgiGiris.Size = new System.Drawing.Size(79, 52);
             this.btnBilgiGiris.TabIndex = 0;
@@ -211,16 +221,6 @@
             this.splitter2.TabIndex = 3;
             this.splitter2.TabStop = false;
             // 
-            // btnUrunGiris
-            // 
-            this.btnUrunGiris.Location = new System.Drawing.Point(95, 15);
-            this.btnUrunGiris.Name = "btnUrunGiris";
-            this.btnUrunGiris.Size = new System.Drawing.Size(79, 52);
-            this.btnUrunGiris.TabIndex = 1;
-            this.btnUrunGiris.Text = "Urun Islemleri";
-            this.btnUrunGiris.UseVisualStyleBackColor = true;
-            this.btnUrunGiris.Click += new System.EventHandler(this.btnUrunGiris_Click);
-            // 
             // AnaSayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,6 +234,7 @@
             this.IsMdiContainer = true;
             this.Name = "AnaSayfa";
             this.Text = "Ana Sayfa";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AnaSayfa_Load);
             this.tabPGenel.ResumeLayout(false);
             this.pnlSol.ResumeLayout(false);

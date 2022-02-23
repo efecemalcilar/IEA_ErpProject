@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3baa6b25aa16422b80a7382c1bdec18d" Name="Diagram1" ZoomLevel="93">
+        <EntityTypeShape EntityType="ErpPro102SModel.Sehirler" Width="1.5" PointX="5" PointY="9.125" />
+        <EntityTypeShape EntityType="ErpPro102SModel.sysdiagrams" Width="1.5" PointX="5" PointY="0.5" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblDepartmanlar" Width="1.5" PointX="5" PointY="4.25" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblDoktorlar" Width="1.5" PointX="9.5" PointY="8" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblFirmaDetaylar" Width="1.5" PointX="10.75" PointY="13.625" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblFirmalar" Width="1.5" PointX="4.125" PointY="14.75" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblHastaneDetaylar" Width="1.5" PointX="12.5" PointY="8.875" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblHastaneler" Width="1.5" PointX="7.25" PointY="8.375" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblHastaneTipleri" Width="1.5" PointX="5" PointY="12.5" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblPersoneller" Width="1.5" PointX="12.5" PointY="3.5" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblDoktorlar_Sehirler" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblFirmalar_Sehirler" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblHastaneler_Sehirler" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblPersoneller_Sehirler" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblFirmaDetaylar_tblDepartmanlar" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblHastaneDetaylar_tblDepartmanlar" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblPersoneller_tblDepartmanlar" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblDoktorlar_tblHastaneler1" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblDoktorlar_tblHastaneler2" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblDoktorlar_tblHastaneler3" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblFirmaDetaylar_tblFirmalar" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblHastanedetaylar_tblHastaneler" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblHastaneler_tblHastaneTipleri_" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblUrunKayitAlt" Width="1.5" PointX="0.75" PointY="0.5" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblUrunKayitUst" Width="1.5" PointX="6.375" PointY="15" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblUrunKayitUst_tblFirmalar" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
