@@ -43,6 +43,7 @@
             this.btnSolUstAra = new System.Windows.Forms.Button();
             this.txtSolUstAra = new System.Windows.Forms.TextBox();
             this.splitter2 = new System.Windows.Forms.Splitter();
+            this.BtnStokIslemleri = new System.Windows.Forms.Button();
             this.tabPGenel.SuspendLayout();
             this.pnlSol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMenu)).BeginInit();
@@ -120,6 +121,7 @@
             // scMenu.Panel2
             // 
             this.scMenu.Panel2.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.scMenu.Panel2.Controls.Add(this.BtnStokIslemleri);
             this.scMenu.Panel2.Controls.Add(this.btnUrunGiris);
             this.scMenu.Panel2.Controls.Add(this.btnBilgiGiris);
             this.scMenu.Size = new System.Drawing.Size(474, 479);
@@ -221,6 +223,16 @@
             this.splitter2.TabIndex = 3;
             this.splitter2.TabStop = false;
             // 
+            // BtnStokIslemleri
+            // 
+            this.BtnStokIslemleri.Location = new System.Drawing.Point(199, 3);
+            this.BtnStokIslemleri.Name = "BtnStokIslemleri";
+            this.BtnStokIslemleri.Size = new System.Drawing.Size(75, 52);
+            this.BtnStokIslemleri.TabIndex = 2;
+            this.BtnStokIslemleri.Text = "Stok Durum";
+            this.BtnStokIslemleri.UseVisualStyleBackColor = true;
+            this.BtnStokIslemleri.Click += new System.EventHandler(this.BtnStokIslemleri_Click);
+            // 
             // AnaSayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,6 +277,7 @@
         private System.Windows.Forms.TreeView tvMenu;
         private System.Windows.Forms.Button btnBilgiGiris;
         private System.Windows.Forms.Button btnUrunGiris;
+        private System.Windows.Forms.Button BtnStokIslemleri;
     }
 }
 

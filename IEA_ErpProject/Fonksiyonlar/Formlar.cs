@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using IEA_ErpProject.BilgiGiris.Personeller;
 using IEA_ErpProject.BilgiGiris.Urunler;
+using IEA_ErpProject.UrunGirisIslemleri;
 
 namespace IEA_ErpProject.Fonksiyonlar
 {
@@ -146,5 +147,26 @@ namespace IEA_ErpProject.Fonksiyonlar
             }
             return AnaSayfa.Aktarma;
         }
+
+
+        public int UrunGirisListesiAc(bool secim = false)
+        {
+
+            UrunlerGirisListesi frm = new UrunlerGirisListesi();
+            if (secim)
+            {
+                frm.Secim = true;
+                frm.ShowDialog();
+            }
+
+            else
+            {
+                frm.MdiParent = Form.ActiveForm;
+                frm.Show();
+            }
+            return AnaSayfa.Aktarma;
+        }
+
+
     }
 }

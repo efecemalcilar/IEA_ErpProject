@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.SpcUrunKayit = new System.Windows.Forms.SplitContainer();
             this.TxtParaBirimi = new System.Windows.Forms.ComboBox();
             this.BtnUrunResmiekle = new System.Windows.Forms.Button();
+            this.pbResim = new System.Windows.Forms.PictureBox();
             this.TxtTarih = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -58,14 +59,14 @@
             this.TxtUrunId = new System.Windows.Forms.TextBox();
             this.Liste = new System.Windows.Forms.DataGridView();
             this.PnlListe = new System.Windows.Forms.Panel();
+            this.BtnRowsDelete = new System.Windows.Forms.Button();
+            this.BtnAddListeRow = new System.Windows.Forms.Button();
             this.BtnTemizle = new System.Windows.Forms.Button();
             this.BtnSil = new System.Windows.Forms.Button();
             this.BtnGüncelle = new System.Windows.Forms.Button();
             this.BtnKaydet = new System.Windows.Forms.Button();
-            this.pbResim = new System.Windows.Forms.PictureBox();
-            this.BtnAddListeRow = new System.Windows.Forms.Button();
-            this.GMDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UNSPC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GMDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SB = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.KulDisi = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.UBB = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,13 +75,15 @@
             this.SUTACIKLAMA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UTS = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Durum = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EtiketId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SpcUrunKayit)).BeginInit();
             this.SpcUrunKayit.Panel1.SuspendLayout();
             this.SpcUrunKayit.Panel2.SuspendLayout();
             this.SpcUrunKayit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbResim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Liste)).BeginInit();
             this.PnlListe.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbResim)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -102,7 +105,7 @@
             this.SpcUrunKayit.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.SpcUrunKayit.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.SpcUrunKayit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SpcUrunKayit.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.SpcUrunKayit.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.SpcUrunKayit.Location = new System.Drawing.Point(0, 65);
             this.SpcUrunKayit.Name = "SpcUrunKayit";
             this.SpcUrunKayit.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -170,6 +173,15 @@
             this.BtnUrunResmiekle.Text = "Urun resmi ekle";
             this.BtnUrunResmiekle.UseVisualStyleBackColor = true;
             this.BtnUrunResmiekle.Click += new System.EventHandler(this.BtnUrunResmiekle_Click);
+            // 
+            // pbResim
+            // 
+            this.pbResim.Location = new System.Drawing.Point(1069, 30);
+            this.pbResim.Name = "pbResim";
+            this.pbResim.Size = new System.Drawing.Size(235, 176);
+            this.pbResim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbResim.TabIndex = 3;
+            this.pbResim.TabStop = false;
             // 
             // TxtTarih
             // 
@@ -365,8 +377,8 @@
             // 
             this.Liste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Liste.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.GMDN,
             this.UNSPC,
+            this.GMDN,
             this.SB,
             this.KulDisi,
             this.UBB,
@@ -374,7 +386,8 @@
             this.SUTFIYAT,
             this.SUTACIKLAMA,
             this.UTS,
-            this.Durum});
+            this.Durum,
+            this.Id});
             this.Liste.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Liste.Location = new System.Drawing.Point(0, 34);
             this.Liste.Name = "Liste";
@@ -384,12 +397,36 @@
             // PnlListe
             // 
             this.PnlListe.BackColor = System.Drawing.Color.SteelBlue;
+            this.PnlListe.Controls.Add(this.BtnRowsDelete);
             this.PnlListe.Controls.Add(this.BtnAddListeRow);
+            this.PnlListe.Controls.Add(this.EtiketId);
             this.PnlListe.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlListe.Location = new System.Drawing.Point(0, 0);
             this.PnlListe.Name = "PnlListe";
             this.PnlListe.Size = new System.Drawing.Size(1469, 34);
             this.PnlListe.TabIndex = 1;
+            // 
+            // BtnRowsDelete
+            // 
+            this.BtnRowsDelete.BackColor = System.Drawing.Color.Beige;
+            this.BtnRowsDelete.Location = new System.Drawing.Point(1243, 0);
+            this.BtnRowsDelete.Name = "BtnRowsDelete";
+            this.BtnRowsDelete.Size = new System.Drawing.Size(77, 31);
+            this.BtnRowsDelete.TabIndex = 6;
+            this.BtnRowsDelete.Text = "Satir Sil";
+            this.BtnRowsDelete.UseVisualStyleBackColor = false;
+            this.BtnRowsDelete.Click += new System.EventHandler(this.BtnRowsDelete_Click);
+            // 
+            // BtnAddListeRow
+            // 
+            this.BtnAddListeRow.BackgroundImage = global::IEA_ErpProject.Properties.Resources.plusicon;
+            this.BtnAddListeRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnAddListeRow.Location = new System.Drawing.Point(1358, 0);
+            this.BtnAddListeRow.Name = "BtnAddListeRow";
+            this.BtnAddListeRow.Size = new System.Drawing.Size(43, 31);
+            this.BtnAddListeRow.TabIndex = 6;
+            this.BtnAddListeRow.UseVisualStyleBackColor = true;
+            this.BtnAddListeRow.Click += new System.EventHandler(this.BtnAddListeRow_Click);
             // 
             // BtnTemizle
             // 
@@ -411,6 +448,7 @@
             this.BtnSil.Size = new System.Drawing.Size(49, 43);
             this.BtnSil.TabIndex = 9;
             this.BtnSil.UseVisualStyleBackColor = true;
+            this.BtnSil.Click += new System.EventHandler(this.BtnSil_Click);
             // 
             // BtnGüncelle
             // 
@@ -434,35 +472,15 @@
             this.BtnKaydet.UseVisualStyleBackColor = true;
             this.BtnKaydet.Click += new System.EventHandler(this.BtnKaydet_Click);
             // 
-            // pbResim
+            // UNSPC
             // 
-            this.pbResim.Location = new System.Drawing.Point(1069, 30);
-            this.pbResim.Name = "pbResim";
-            this.pbResim.Size = new System.Drawing.Size(235, 176);
-            this.pbResim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbResim.TabIndex = 3;
-            this.pbResim.TabStop = false;
-            // 
-            // BtnAddListeRow
-            // 
-            this.BtnAddListeRow.BackgroundImage = global::IEA_ErpProject.Properties.Resources.plusicon;
-            this.BtnAddListeRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnAddListeRow.Location = new System.Drawing.Point(1358, 0);
-            this.BtnAddListeRow.Name = "BtnAddListeRow";
-            this.BtnAddListeRow.Size = new System.Drawing.Size(43, 31);
-            this.BtnAddListeRow.TabIndex = 6;
-            this.BtnAddListeRow.UseVisualStyleBackColor = true;
-            this.BtnAddListeRow.Click += new System.EventHandler(this.BtnAddListeRow_Click);
+            this.UNSPC.HeaderText = "UNPSC";
+            this.UNSPC.Name = "UNSPC";
             // 
             // GMDN
             // 
             this.GMDN.HeaderText = "GMDN";
             this.GMDN.Name = "GMDN";
-            // 
-            // UNSPC
-            // 
-            this.UNSPC.HeaderText = "UNPSC";
-            this.UNSPC.Name = "UNSPC";
             // 
             // SB
             // 
@@ -490,9 +508,9 @@
             // 
             // SUTFIYAT
             // 
-            dataGridViewCellStyle1.Format = "C4";
-            dataGridViewCellStyle1.NullValue = "0";
-            this.SUTFIYAT.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Format = "C4";
+            dataGridViewCellStyle5.NullValue = "0";
+            this.SUTFIYAT.DefaultCellStyle = dataGridViewCellStyle5;
             this.SUTFIYAT.HeaderText = "SUTFIYAT";
             this.SUTFIYAT.Name = "SUTFIYAT";
             // 
@@ -512,12 +530,28 @@
             // 
             // Durum
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle2.NullValue = false;
-            this.Durum.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle6.NullValue = false;
+            this.Durum.DefaultCellStyle = dataGridViewCellStyle6;
             this.Durum.HeaderText = "Durum";
             this.Durum.Name = "Durum";
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            // 
+            // EtiketId
+            // 
+            this.EtiketId.BackColor = System.Drawing.Color.Beige;
+            this.EtiketId.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.EtiketId.Location = new System.Drawing.Point(714, 3);
+            this.EtiketId.Name = "EtiketId";
+            this.EtiketId.Size = new System.Drawing.Size(159, 28);
+            this.EtiketId.TabIndex = 1;
+            this.EtiketId.Text = "***";
+            this.EtiketId.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UrunKayit
             // 
@@ -539,9 +573,9 @@
             this.SpcUrunKayit.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SpcUrunKayit)).EndInit();
             this.SpcUrunKayit.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbResim)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Liste)).EndInit();
             this.PnlListe.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbResim)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -582,8 +616,9 @@
         private System.Windows.Forms.TextBox TxtBirimFiyat;
         private System.Windows.Forms.Panel PnlListe;
         private System.Windows.Forms.Button BtnAddListeRow;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GMDN;
+        private System.Windows.Forms.Button BtnRowsDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn UNSPC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GMDN;
         private System.Windows.Forms.DataGridViewCheckBoxColumn SB;
         private System.Windows.Forms.DataGridViewCheckBoxColumn KulDisi;
         private System.Windows.Forms.DataGridViewTextBoxColumn UBB;
@@ -592,5 +627,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SUTACIKLAMA;
         private System.Windows.Forms.DataGridViewCheckBoxColumn UTS;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Durum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.Label EtiketId;
     }
 }

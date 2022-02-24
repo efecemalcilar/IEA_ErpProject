@@ -4,6 +4,7 @@ using IEA_ErpProject.BilgiGiris.Hastaneler;
 using IEA_ErpProject.BilgiGiris.Personeller;
 using IEA_ErpProject.BilgiGiris.Urunler;
 using IEA_ErpProject.Fonksiyonlar;
+using IEA_ErpProject.UrunGirisIslemleri;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,11 +36,7 @@ namespace IEA_ErpProject
         }
 
      
-        private void btnBilgiGiris_Click(object sender, EventArgs e)
-        {
-            lblMenu.Text = btnBilgiGiris.Text;            // Bilgi giriş'e tıkladigimizda Yukarıda Bilgi giriş yazısı gelir.
-            MenuOlustur("bilgi");                                 // MenuOlustur() yapıp ampule tıklayınca kendi otomatik method oluşturdu                         
-        }
+        
 
         private void MenuOlustur(string info)
         {                                                           // ctrl+K+S yapınca komple if bloğu içine alabiliyoruz.
@@ -79,15 +76,17 @@ namespace IEA_ErpProject
 
             }
 
+            else if (info == "Stok")
+            {
+                tvMenu.Nodes.Add("Stok ");
+                tvMenu.Nodes[0].Nodes.Add("Stok Durum");
+                //tvMenu.Nodes[0].Nodes.Add("Urun Giris");
 
+            }
 
         }
 
-        private void btnUrunGiris_Click(object sender, EventArgs e)
-        {
-            lblMenu.Text = btnUrunGiris.Text;
-            MenuOlustur("urun");
-        }
+        
 
         private void tvMenu_DoubleClick(object sender, EventArgs e)
         {
@@ -198,12 +197,45 @@ namespace IEA_ErpProject
                 frm1.Show();
             }
 
-           
 
+            if (isimb == "Urunler Listesi" && Application.OpenForms["UrunlerGirisListesi"] == null)
+            {
+
+                
+                f.UrunGirisListesiAc();
+            }
+
+            else if (isimb == "Urun Giris" && Application.OpenForms["UrunGiris"] == null)
+            {
+                UrunGiris frm1 = new UrunGiris();
+                frm1.MdiParent = Form.ActiveForm;
+                frm1.Show();
+            }
 
 
         }
 
+        #region Buttonlar
+        private void BtnStokIslemleri_Click(object sender, EventArgs e)
+        {
+            lblMenu.Text = btnUrunGiris.Text;
+            MenuOlustur("Stok");
+        }
+
+
+        private void btnUrunGiris_Click(object sender, EventArgs e)
+        {
+            lblMenu.Text = btnUrunGiris.Text;
+            MenuOlustur("urun");
+        }
+
+
+        private void btnBilgiGiris_Click(object sender, EventArgs e)
+        {
+            lblMenu.Text = btnBilgiGiris.Text;            // Bilgi giriş'e tıkladigimizda Yukarıda Bilgi giriş yazısı gelir.
+            MenuOlustur("bilgi");                                 // MenuOlustur() yapıp ampule tıklayınca kendi otomatik method oluşturdu                         
+        } 
+        #endregion
 
     }
 }
