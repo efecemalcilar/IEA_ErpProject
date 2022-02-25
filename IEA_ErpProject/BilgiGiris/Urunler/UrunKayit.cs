@@ -96,7 +96,7 @@ namespace IEA_ErpProject.BilgiGiris.Urunler
             AnaSayfa.Aktarma = -1;
         }
 
-        public void UrunAc(int uid)
+        public void UrunAc(int uid)  // UrunAc ın ne iş yaptığını sor ????
         {
             
             Temizle();
@@ -104,7 +104,7 @@ namespace IEA_ErpProject.BilgiGiris.Urunler
             Liste.AllowUserToAddRows = false;
 
             tblUrunKayitUst lst = _db.tblUrunKayitUst.FirstOrDefault(s =>
-                s.Uid == uid); // Lambda expression nesne çreneğini ref almamı bekliyor.
+                s.Uid == uid); // Lambda expression nesne örneğini ref almamı bekliyor.
 
             TxtAciklamaEng.Text = lst.AciklamaEng;
             TxtAciklamaTr.Text = lst.AciklamaTr;
@@ -184,8 +184,7 @@ namespace IEA_ErpProject.BilgiGiris.Urunler
         {
             int cariId = id;
 
-            tblFirmalar frm = _db.tblFirmalar.First(s => s.Id == cariId);
-            TxtFirmaKodu.Text = frm.Id.ToString().PadLeft(7, '0');
+            tblFirmalar frm = _db.tblFirmalar.First(s => s.Id == cariId);   // First'un olayını sor
             TxtFirmaAdi.Text = frm.Adi;
 
         }
@@ -197,7 +196,7 @@ namespace IEA_ErpProject.BilgiGiris.Urunler
 
         private void YeniKaydet()
         {
-            Liste.AllowUserToAddRows = false; // Neden false???
+            Liste.AllowUserToAddRows = false; 
             if (TxtUrunId.Text == "" || TxtUrunKodu.Text == "" ||
                 TxtFirmaKodu.Text == "") // urunıd ve urunkodu boşsa hata ver
             {
@@ -244,11 +243,11 @@ namespace IEA_ErpProject.BilgiGiris.Urunler
                 alt[i].UTS = Convert.ToBoolean(Liste.Rows[i].Cells[8].Value);
                 alt[i].Uid = int.Parse(TxtUrunId.Text);
                 alt[i].UIKodu = TxtUrunKodu.Text;
+                
+
+                _db.tblUrunKayitAlt.Add(alt[i]);                  // Row Count un anlamı tam ne???
 
 
-                _db.tblUrunKayitAlt.Add(alt[i]);
-
-                // Row Count un anlamı tam ne???
 
             }
 

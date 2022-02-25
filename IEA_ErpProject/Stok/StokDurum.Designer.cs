@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.SpcStok = new System.Windows.Forms.SplitContainer();
-            this.PnlSol = new System.Windows.Forms.Panel();
-            this.splitter1 = new System.Windows.Forms.Splitter();
             this.ListeStok = new System.Windows.Forms.DataGridView();
-            this.ListeUrunHareket = new System.Windows.Forms.DataGridView();
-            this.ListeKonsinye = new System.Windows.Forms.DataGridView();
-            this.splitter2 = new System.Windows.Forms.Splitter();
-            this.splitter3 = new System.Windows.Forms.Splitter();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.PnlSol = new System.Windows.Forms.Panel();
             this.ListeSube = new System.Windows.Forms.DataGridView();
+            this.splitter3 = new System.Windows.Forms.Splitter();
+            this.splitter2 = new System.Windows.Forms.Splitter();
+            this.ListeKonsinye = new System.Windows.Forms.DataGridView();
+            this.ListeUrunHareket = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.SpcStok)).BeginInit();
             this.SpcStok.Panel1.SuspendLayout();
             this.SpcStok.Panel2.SuspendLayout();
             this.SpcStok.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListeStok)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ListeUrunHareket)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ListeKonsinye)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListeSube)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListeKonsinye)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListeUrunHareket)).BeginInit();
             this.SuspendLayout();
             // 
             // SpcStok
@@ -75,14 +75,14 @@
             this.SpcStok.SplitterDistance = 450;
             this.SpcStok.TabIndex = 0;
             // 
-            // PnlSol
+            // ListeStok
             // 
-            this.PnlSol.BackColor = System.Drawing.Color.LightSalmon;
-            this.PnlSol.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PnlSol.Location = new System.Drawing.Point(0, 0);
-            this.PnlSol.Name = "PnlSol";
-            this.PnlSol.Size = new System.Drawing.Size(201, 446);
-            this.PnlSol.TabIndex = 0;
+            this.ListeStok.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ListeStok.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListeStok.Location = new System.Drawing.Point(223, 0);
+            this.ListeStok.Name = "ListeStok";
+            this.ListeStok.Size = new System.Drawing.Size(1237, 446);
+            this.ListeStok.TabIndex = 2;
             // 
             // splitter1
             // 
@@ -93,51 +93,14 @@
             this.splitter1.TabIndex = 1;
             this.splitter1.TabStop = false;
             // 
-            // ListeStok
+            // PnlSol
             // 
-            this.ListeStok.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListeStok.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListeStok.Location = new System.Drawing.Point(223, 0);
-            this.ListeStok.Name = "ListeStok";
-            this.ListeStok.Size = new System.Drawing.Size(1237, 446);
-            this.ListeStok.TabIndex = 2;
-            // 
-            // ListeUrunHareket
-            // 
-            this.ListeUrunHareket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListeUrunHareket.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ListeUrunHareket.Location = new System.Drawing.Point(0, 0);
-            this.ListeUrunHareket.Name = "ListeUrunHareket";
-            this.ListeUrunHareket.Size = new System.Drawing.Size(305, 176);
-            this.ListeUrunHareket.TabIndex = 0;
-            // 
-            // ListeKonsinye
-            // 
-            this.ListeKonsinye.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListeKonsinye.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ListeKonsinye.Location = new System.Drawing.Point(1155, 0);
-            this.ListeKonsinye.Name = "ListeKonsinye";
-            this.ListeKonsinye.Size = new System.Drawing.Size(305, 176);
-            this.ListeKonsinye.TabIndex = 1;
-            // 
-            // splitter2
-            // 
-            this.splitter2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.splitter2.Location = new System.Drawing.Point(305, 0);
-            this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(10, 176);
-            this.splitter2.TabIndex = 2;
-            this.splitter2.TabStop = false;
-            // 
-            // splitter3
-            // 
-            this.splitter3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.splitter3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.splitter3.Location = new System.Drawing.Point(1143, 0);
-            this.splitter3.Name = "splitter3";
-            this.splitter3.Size = new System.Drawing.Size(12, 176);
-            this.splitter3.TabIndex = 3;
-            this.splitter3.TabStop = false;
+            this.PnlSol.BackColor = System.Drawing.Color.LightSalmon;
+            this.PnlSol.Dock = System.Windows.Forms.DockStyle.Left;
+            this.PnlSol.Location = new System.Drawing.Point(0, 0);
+            this.PnlSol.Name = "PnlSol";
+            this.PnlSol.Size = new System.Drawing.Size(201, 446);
+            this.PnlSol.TabIndex = 0;
             // 
             // ListeSube
             // 
@@ -149,6 +112,43 @@
             this.ListeSube.Size = new System.Drawing.Size(828, 176);
             this.ListeSube.TabIndex = 4;
             // 
+            // splitter3
+            // 
+            this.splitter3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.splitter3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.splitter3.Location = new System.Drawing.Point(1143, 0);
+            this.splitter3.Name = "splitter3";
+            this.splitter3.Size = new System.Drawing.Size(12, 176);
+            this.splitter3.TabIndex = 3;
+            this.splitter3.TabStop = false;
+            // 
+            // splitter2
+            // 
+            this.splitter2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.splitter2.Location = new System.Drawing.Point(305, 0);
+            this.splitter2.Name = "splitter2";
+            this.splitter2.Size = new System.Drawing.Size(10, 176);
+            this.splitter2.TabIndex = 2;
+            this.splitter2.TabStop = false;
+            // 
+            // ListeKonsinye
+            // 
+            this.ListeKonsinye.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ListeKonsinye.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ListeKonsinye.Location = new System.Drawing.Point(1155, 0);
+            this.ListeKonsinye.Name = "ListeKonsinye";
+            this.ListeKonsinye.Size = new System.Drawing.Size(305, 176);
+            this.ListeKonsinye.TabIndex = 1;
+            // 
+            // ListeUrunHareket
+            // 
+            this.ListeUrunHareket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ListeUrunHareket.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ListeUrunHareket.Location = new System.Drawing.Point(0, 0);
+            this.ListeUrunHareket.Name = "ListeUrunHareket";
+            this.ListeUrunHareket.Size = new System.Drawing.Size(305, 176);
+            this.ListeUrunHareket.TabIndex = 0;
+            // 
             // StokDurum
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,14 +157,15 @@
             this.Controls.Add(this.SpcStok);
             this.Name = "StokDurum";
             this.Text = "StokDurum";
+            this.Load += new System.EventHandler(this.StokDurum_Load);
             this.SpcStok.Panel1.ResumeLayout(false);
             this.SpcStok.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SpcStok)).EndInit();
             this.SpcStok.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ListeStok)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ListeUrunHareket)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ListeKonsinye)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListeSube)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListeKonsinye)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListeUrunHareket)).EndInit();
             this.ResumeLayout(false);
 
         }

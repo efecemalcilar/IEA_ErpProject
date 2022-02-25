@@ -73,11 +73,21 @@ namespace IEA_ErpProject.BilgiGiris.Hastaneler
             if (Liste.CurrentRow != null) secimId = (int?)
             Liste.CurrentRow.Cells[1].Value ?? -1;
            
-            if (secimId>0 && Secim && Application.OpenForms["HastaneGiris"]== null)
+            if (secimId>0 )
             {
-                AnaSayfa.Aktarma = secimId;
-                Close();
-                f.HastaneGirisAc(secimId);
+                if (Application.OpenForms["HastaneGiris"] == null && Application.OpenForms["Urungiris"]==null)
+                {
+                    AnaSayfa.Aktarma = secimId;
+                    Close();
+                    f.HastaneGirisAc(secimId); 
+                }
+                else if (Application.OpenForms["UrunGiris"] != null)
+                {
+                    AnaSayfa.Aktarma = secimId;
+                    Close();
+                }
+
+
 
             }                     // tıkladığımda hangi satır seçiliyse currentRow kullanırız.
                                   // Eğer normal bir değer gelirse burdaki değeri al int e cevir , eger null gelirse -1 yaz.

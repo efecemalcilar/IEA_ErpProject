@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3baa6b25aa16422b80a7382c1bdec18d" Name="Diagram1" ZoomLevel="93">
+      <Diagram DiagramId="3baa6b25aa16422b80a7382c1bdec18d" Name="Diagram1" ZoomLevel="75">
         <EntityTypeShape EntityType="ErpPro102SModel.Sehirler" Width="1.5" PointX="5" PointY="9.125" />
         <EntityTypeShape EntityType="ErpPro102SModel.sysdiagrams" Width="1.5" PointX="5" PointY="0.5" />
         <EntityTypeShape EntityType="ErpPro102SModel.tblDepartmanlar" Width="1.5" PointX="5" PointY="4.25" />
@@ -31,6 +31,9 @@
         <EntityTypeShape EntityType="ErpPro102SModel.tblUrunKayitAlt" Width="1.5" PointX="0.75" PointY="0.5" />
         <EntityTypeShape EntityType="ErpPro102SModel.tblUrunKayitUst" Width="1.5" PointX="6.375" PointY="15" />
         <AssociationConnector Association="ErpPro102SModel.FK_tblUrunKayitUst_tblFirmalar" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblStokDurum" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblUrunGirisAlt" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblUrunGirisUst" Width="1.5" PointX="9.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

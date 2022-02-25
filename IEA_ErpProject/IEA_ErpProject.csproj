@@ -200,6 +200,15 @@
     <Compile Include="Entity\tblPersoneller.cs">
       <DependentUpon>ErpProModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\tblStokDurum.cs">
+      <DependentUpon>ErpProModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblUrunGirisAlt.cs">
+      <DependentUpon>ErpProModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblUrunGirisUst.cs">
+      <DependentUpon>ErpProModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\tblUrunKayitAlt.cs">
       <DependentUpon>ErpProModel.tt</DependentUpon>
     </Compile>
@@ -287,6 +296,9 @@
     <EmbeddedResource Include="Stok\StokDurum.resx">
       <DependentUpon>StokDurum.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UrunGirisIslemleri\UrunGiris.resx">
+      <DependentUpon>UrunGiris.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UrunGirisIslemleri\UrunlerGirisListesi.resx">
       <DependentUpon>UrunlerGirisListesi.cs</DependentUpon>
     </EmbeddedResource>
@@ -333,6 +345,8 @@
       <LastGenOutput>ErpProModel.cs</LastGenOutput>
     </Content>
     <Content Include="ReadMe.txt" />
+    <None Include="Resources\modern-laser-printer-icon-digital-green-modern-laser-printer-icon-digital-green-any-design-isolated-white-vector-115768523.jpg" />
+    <None Include="Resources\printer-icon-print-documents-technology-sign-vector-10490957.jpg" />
     <None Include="res\plusicon.jpg" />
     <None Include="res\exit-64.png" />
     <None Include="res\clean.png" />

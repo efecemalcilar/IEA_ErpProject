@@ -65,12 +65,21 @@ namespace IEA_ErpProject.BilgiGiris.Doktorlar
             if (Liste.CurrentRow != null) secimId = (int?)
             Liste.CurrentRow.Cells[1].Value ?? -1;
 
-            if (secimId > 0 && Secim && Application.OpenForms["DoktorGiris"] == null)
+            if (secimId > 0 )
             {
-                AnaSayfa.Aktarma = secimId;
-                Close();
-                f.DoktorlarGirisAc(secimId);
+                if (Application.OpenForms["DoktorGiris"] == null && Application.OpenForms["UrunGiris"]== null)
+                {
+                    AnaSayfa.Aktarma = secimId;
+                    Close();
+                    f.DoktorlarGirisAc(secimId);
+                }
 
+                else if (Application.OpenForms["UrunGiris"] != null)
+                {
+                    AnaSayfa.Aktarma = secimId;
+                    Close();
+                }
+                
             }                     // tıkladığımda hangi satır seçiliyse currentRow kullanırız.
                                   // Eğer normal bir değer gelirse burdaki değeri al int e cevir , eger null gelirse -1 yaz.
 

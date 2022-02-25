@@ -15,8 +15,7 @@ namespace IEA_ErpProject.Fonksiyonlar
         {
             try
             {
-                var numara = (from s in _db.tblUrunKayitUst orderby s.Id descending select s).First()
-                    .Uid;                              // linq tipinde bir sql sorgusu, id baz alınarak ters ceviriliyor.
+                var numara = (from s in _db.tblUrunKayitUst orderby s.Id descending select s).First().Uid;                              // linq tipinde bir sql sorgusu, id baz alınarak ters ceviriliyor.
                 numara++;
                 string num = numara.ToString().PadLeft(7,'0');
                 return num;

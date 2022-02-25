@@ -14,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IEA_ErpProject.Stok;
 
 namespace IEA_ErpProject
 {
@@ -90,12 +91,13 @@ namespace IEA_ErpProject
 
         private void tvMenu_DoubleClick(object sender, EventArgs e)
         {
+            #region HastanelerListesi
             string isim = "";
-            if (tvMenu.SelectedNode!=null)                         // burdan gelen deger eger bir null değilse
+            if (tvMenu.SelectedNode != null)                         // burdan gelen deger eger bir null değilse
             {
                 isim = tvMenu.SelectedNode.Text;
             }
-            if (isim=="Hastaneler Listesi" && Application.OpenForms["HastanelerListesi"]==null)// bu form daha önceden acıldıysa acma diyor.
+            if (isim == "Hastaneler Listesi" && Application.OpenForms["HastanelerListesi"] == null)// bu form daha önceden acıldıysa acma diyor.
             {
                 //HastanelerListesi frm = new HastanelerListesi();       // referans alıp frm nin içine yüklemiş oldum.
                 //frm.MdiParent = Form.ActiveForm;                      // bu formun parent i = Form sınıfına git ordaki aktif formu kullan
@@ -110,17 +112,19 @@ namespace IEA_ErpProject
                 frm.MdiParent = Form.ActiveForm;
                 frm.Show();
             }
+            #endregion
 
+            #region DoktorlarListesi
             string isima = "";
 
-            if (tvMenu.SelectedNode!=null)
+            if (tvMenu.SelectedNode != null)
             {
                 isima = tvMenu.SelectedNode.Text;
             }
 
-            
 
-            if (isima=="Doktorlar Listesi" && Application.OpenForms["DoktorlarListesi"]==null)
+
+            if (isima == "Doktorlar Listesi" && Application.OpenForms["DoktorlarListesi"] == null)
             {
                 //DoktorlarListesi frm1 = new DoktorlarListesi();
                 //frm1.MdiParent = Form.ActiveForm;
@@ -134,7 +138,9 @@ namespace IEA_ErpProject
                 frm1.MdiParent = Form.ActiveForm;
                 frm1.Show();
             }
+            #endregion
 
+            #region FirmalarListesi
             string isimb = "";
 
             if (tvMenu.SelectedNode != null)
@@ -150,8 +156,10 @@ namespace IEA_ErpProject
                 //frm1.MdiParent = Form.ActiveForm;
                 //frm1.Show();
                 f.FirmalarListesiAc();
-            }
+            } 
+            #endregion
 
+            #region FirmaBilgiGiris
             else if (isimb == "Firma Bilgi Giris" && Application.OpenForms["FirmaGiris"] == null)
             {
                 FirmaGiris frm1 = new FirmaGiris();
@@ -164,10 +172,12 @@ namespace IEA_ErpProject
             if (tvMenu.SelectedNode != null)
             {
                 isimc = tvMenu.SelectedNode.Text;
-            }
+            } 
+            #endregion
 
 
 
+            #region PersonellerListesi
             if (isimc == "Personeller Listesi" && Application.OpenForms["PersonellerListesi"] == null)
             {
                 PersonellerListesi frm2 = new PersonellerListesi();
@@ -181,12 +191,14 @@ namespace IEA_ErpProject
                 PersonelGiris frm2 = new PersonelGiris();
                 frm2.MdiParent = Form.ActiveForm;
                 frm2.Show();
-            }
+            } 
+            #endregion
 
 
+            #region UrunKayit
             if (isimb == "Urun Kayit Listesi" && Application.OpenForms["UrunKayitListesi"] == null)
             {
-                
+
                 f.UrunKayitListesiAc();
             }
 
@@ -195,13 +207,15 @@ namespace IEA_ErpProject
                 UrunKayit frm1 = new UrunKayit();
                 frm1.MdiParent = Form.ActiveForm;
                 frm1.Show();
-            }
+            } 
+            #endregion
 
 
+            #region UrunGirisListesi
             if (isimb == "Urunler Listesi" && Application.OpenForms["UrunlerGirisListesi"] == null)
             {
 
-                
+
                 f.UrunGirisListesiAc();
             }
 
@@ -210,8 +224,20 @@ namespace IEA_ErpProject
                 UrunGiris frm1 = new UrunGiris();
                 frm1.MdiParent = Form.ActiveForm;
                 frm1.Show();
-            }
+            } 
+            #endregion
 
+            #region StokIslemleri
+            if (isimb == "Stok Durum" && Application.OpenForms["StokDurum"] as StokDurum == null)
+            {
+
+
+                f.StokDurumAc();
+            }
+           
+            
+            
+            #endregion
 
         }
 

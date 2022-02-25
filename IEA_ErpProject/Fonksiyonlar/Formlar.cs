@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using IEA_ErpProject.BilgiGiris.Personeller;
 using IEA_ErpProject.BilgiGiris.Urunler;
 using IEA_ErpProject.UrunGirisIslemleri;
+using IEA_ErpProject.Stok;
 
 namespace IEA_ErpProject.Fonksiyonlar
 {
@@ -168,5 +169,23 @@ namespace IEA_ErpProject.Fonksiyonlar
         }
 
 
+
+        public int StokDurumAc(bool secim = false)
+        {
+
+            StokDurum frm = new StokDurum();
+            if (secim)
+            {
+                frm.Secim = true;
+                frm.ShowDialog();
+            }
+
+            else
+            {
+                frm.MdiParent = Form.ActiveForm;
+                frm.Show();
+            }
+            return AnaSayfa.Aktarma;
+        }
     }
 }

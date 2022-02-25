@@ -12,9 +12,16 @@ namespace IEA_ErpProject.Stok
 {
     public partial class StokDurum : Form
     {
+
+        public bool Secim = false;
         public StokDurum()
         {
             InitializeComponent();
+        }
+
+        private void StokDurum_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

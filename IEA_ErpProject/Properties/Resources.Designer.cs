@@ -103,9 +103,30 @@ namespace IEA_ErpProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap modern_laser_printer_icon_digital_green_modern_laser_printer_icon_digital_green_any_design_isolated_white_vector_115768523 {
+            get {
+                object obj = ResourceManager.GetObject("modern-laser-printer-icon-digital-green-modern-laser-printer-icon-digital-green-a" +
+                        "ny-design-isolated-white-vector-115768523", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap plusicon {
             get {
                 object obj = ResourceManager.GetObject("plusicon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap printer_icon_print_documents_technology_sign_vector_10490957 {
+            get {
+                object obj = ResourceManager.GetObject("printer-icon-print-documents-technology-sign-vector-10490957", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
