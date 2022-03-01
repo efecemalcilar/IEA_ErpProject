@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjeAtHome
+namespace ProjeAtHome.Entity
 {
     using System;
     using System.Collections.Generic;

@@ -11,11 +11,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProjeAtHome.Entity;
+using ProjeAtHome.Fonksiyonlar;
 
 namespace ProjeAtHome
 {
     public partial class AnaSayfa1 : Form
     {
+        private Formlar f = new Formlar();
+        private readonly Entity.ErpPro102SEntities2 _db = new ErpPro102SEntities2();
         internal static int Aktarma;
 
         public AnaSayfa1()
@@ -63,11 +67,7 @@ namespace ProjeAtHome
         }
     
     
-        private void btnUrunGiris_Click(object sender, EventArgs e)
-        {
-            lblMenu.Text = btnUrunGiris.Text;
-            MenuOlustur("urun");
-        }
+        
 
         private void btnBilgiGiris_Click(object sender, EventArgs e)
         {
@@ -75,27 +75,28 @@ namespace ProjeAtHome
             MenuOlustur("bilgi");                                       
         }
     
-         private void tvMenu_Doubleclick(object sender,EventArgs e)
-        {
+         
 
+        private void tvMenu_DoubleClick_1(object sender, EventArgs e)
+        {
             string isim = "";
-            if (tvMenu.SelectedNode != null)                        
+            if (tvMenu.SelectedNode != null)
             {
                 isim = tvMenu.SelectedNode.Text;
             }
             if (isim == "Hastaneler Listesi" && Application.OpenForms["HastanelerListesi"] == null)
             {
-                HastanelerListesi frm1 = new HastanelerListesi();    
-                frm1.MdiParent = Form.ActiveForm;                      
-               
-                frm1.Show();   
+                HastanelerListesi frm1 = new HastanelerListesi();
+                frm1.MdiParent = Form.ActiveForm;
+
+                frm1.Show();
             }
 
             else if (isim == "Hastane Bilgi Giris" && Application.OpenForms["HastaneGiris"] == null)
             {
-                HastaneGiris frm = new HastaneGiris();
-                frm.MdiParent = Form.ActiveForm;
-                frm.Show();
+                HastaneGiris frm1 = new HastaneGiris();
+                frm1.MdiParent = Form.ActiveForm;
+                frm1.Show();
             }
 
             string isima = "";
@@ -169,21 +170,13 @@ namespace ProjeAtHome
                 frm2.MdiParent = Form.ActiveForm;
                 frm2.Show();
             }
-
-
-
-
-
-
-
-
-
-
-
-
         }
 
-        
+        private void btnUrunGiris_Click_1(object sender, EventArgs e)
+        {
+            lblMenu.Text = btnUrunGiris.Text;
+            MenuOlustur("urun");
+        }
     }
 
 

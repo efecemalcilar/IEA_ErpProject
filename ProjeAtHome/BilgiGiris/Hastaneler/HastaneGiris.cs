@@ -17,7 +17,7 @@ namespace ProjeAtHome.BilgiGiris.Hastaneler
     public partial class HastaneGiris : Form
     {
 
-        private readonly ProjeAtHome.Entity.ErpPro102Entities _db = new ProjeAtHome.Entity.ErpPro102Entities();
+        private readonly Entity.ErpPro102SEntities2 _db = new ErpPro102SEntities2();
 
         private int secimId = -1;
         public bool Secim = false;
@@ -102,7 +102,7 @@ namespace ProjeAtHome.BilgiGiris.Hastaneler
 
         private void Temizle()
         {
-            foreach (Control k  in ScHastane.Panel1.Controls)
+            foreach (Control k  in scHastane.Panel1.Controls)
             {
                 if (k is TextBox || k is ComboBox || k is MaskedTextBox ||k is RichTextBox)
                 {
@@ -121,7 +121,7 @@ namespace ProjeAtHome.BilgiGiris.Hastaneler
 
             int i = 0, sira = 1;
 
-            hstList = (from s in _db.tblHastaneler select s).Tolist();
+            hstList = (from s in _db.tblHastaneler select s).ToList();
 
             foreach (var item in hstList)
             {
@@ -265,7 +265,7 @@ namespace ProjeAtHome.BilgiGiris.Hastaneler
             if (secimId>0)
             {
                 _db.tblHastaneler.Remove(kayitBul);
-                _db.Savechanges();
+                _db.SaveChanges();
                 MessageBox.Show("Kaydiniz silinmistir, gecmis olsun");
                 Temizle();
                 Listele();

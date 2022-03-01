@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProjeAtHome.Entity;
 
 namespace ProjeAtHome.BilgiGiris.Hastaneler
 {
     public partial class HastaneDetay : Form
     {
 
-        private readonly ProjeAtHome.Entity.ErpPrp102SEntities _db = new Entity.Erp102Sentities();
+        private readonly ProjeAtHome.Entity.ErpPro102SEntities2 _db = new ErpPro102SEntities2();
         
         
         
@@ -29,7 +30,7 @@ namespace ProjeAtHome.BilgiGiris.Hastaneler
 
         private void ComboDoldur()
         {
-            TxtDepartman.DataSource = _db.tblDepartmanlar.Where(x => x.DepartmanKodu == 'H').ToList();
+            //TxtDepartman.DataSource = _db.tblDepartmanlar.Where(x => x.DepartmanKodu == 'H').ToList();
             TxtDepartman.ValueMember = "Id";
             TxtDepartman.DisplayMember = "Adi";
             TxtDepartman.SelectedIndex = -1;

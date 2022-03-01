@@ -70,36 +70,64 @@ namespace IEA_ErpProject.BilgiGiris.Hastaneler
 
         private void Liste_DoubleClick(object sender, EventArgs e)
         {
-            if (Liste.CurrentRow != null) secimId = (int?)
-            Liste.CurrentRow.Cells[1].Value ?? -1;
-           
-            if (secimId>0 )
+            //if (Liste.CurrentRow != null) secimId = (int?)
+            //Liste.CurrentRow.Cells[1].Value ?? -1;
+
+            //if (secimId>0 )
+            //{
+            //    if (Application.OpenForms["HastaneGiris"] == null && Application.OpenForms["Urungiris"]==null)
+            //    {
+            //        AnaSayfa.Aktarma = secimId;
+            //        Close();
+            //        f.HastaneGirisAc(secimId); 
+            //    }
+            //    else if (Application.OpenForms["UrunGiris"] != null)
+            //    {
+            //        AnaSayfa.Aktarma = secimId;
+            //        Close();
+            //    }
+
+
+
+            //}                     // tıkladığımda hangi satır seçiliyse currentRow kullanırız.
+            //                      // Eğer normal bir değer gelirse burdaki değeri al int e cevir , eger null gelirse -1 yaz.
+
+            //else if (Application.OpenForms["HastaneGiris"]!=null)
+            //{
+            //    HastaneGiris frm = Application.OpenForms["HastaneGiris"] as HastaneGiris;  // Acık olan formdan bilgileri al frm nin içerisine getir.
+
+            //    frm.Ac(secimId);
+            //    Close();
+            //}
+
+            if (Liste.CurrentRow != null)
+                secimId = (int?)
+                    Liste.CurrentRow.Cells[1].Value ?? -1;
+
+            if (secimId > 0 && Secim && Application.OpenForms["HastaneGiris"] == null)
             {
-                if (Application.OpenForms["HastaneGiris"] == null && Application.OpenForms["Urungiris"]==null)
-                {
-                    AnaSayfa.Aktarma = secimId;
-                    Close();
-                    f.HastaneGirisAc(secimId); 
-                }
-                else if (Application.OpenForms["UrunGiris"] != null)
-                {
-                    AnaSayfa.Aktarma = secimId;
-                    Close();
-                }
+                AnaSayfa.Aktarma = secimId;
+                Close();
 
 
+            } // tıkladığımda hangi satır seçiliyse currentRow kullanırız.
+            // Eğer normal bir değer gelirse burdaki değeri al int e cevir , eger null gelirse -1 yaz.
 
-            }                     // tıkladığımda hangi satır seçiliyse currentRow kullanırız.
-                                  // Eğer normal bir değer gelirse burdaki değeri al int e cevir , eger null gelirse -1 yaz.
-                                    
-            else if (Application.OpenForms["HastaneGiris"]!=null)
+            else if (Secim && Application.OpenForms["HastaneGiris"] != null)
             {
-                HastaneGiris frm = Application.OpenForms["HastaneGiris"] as HastaneGiris;  // Acık olan formdan bilgileri al frm nin içerisine getir.
-                
+                HastaneGiris frm = Application.OpenForms["HastaneGiris"] as HastaneGiris;
                 frm.Ac(secimId);
                 Close();
+
             }
-        
+
+
+            else if (!Secim)
+            {
+                f.HastaneGirisAc(secimId);
+                Close();
+            }
+
         }
 
         private void BtnHastaneAra_Click(object sender, EventArgs e)

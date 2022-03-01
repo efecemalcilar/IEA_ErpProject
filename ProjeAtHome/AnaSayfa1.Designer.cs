@@ -101,6 +101,7 @@
             this.tvMenu.Name = "tvMenu";
             this.tvMenu.Size = new System.Drawing.Size(470, 223);
             this.tvMenu.TabIndex = 0;
+            this.tvMenu.DoubleClick += new System.EventHandler(this.tvMenu_DoubleClick_1);
             // 
             // btnUrunGiris
             // 
@@ -110,6 +111,7 @@
             this.btnUrunGiris.TabIndex = 1;
             this.btnUrunGiris.Text = "Urun Islemleri";
             this.btnUrunGiris.UseVisualStyleBackColor = true;
+            this.btnUrunGiris.Click += new System.EventHandler(this.btnUrunGiris_Click_1);
             // 
             // btnBilgiGiris
             // 

@@ -12,31 +12,27 @@ namespace ProjeAtHome.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class tblHastaneler
+    public partial class tblFirmalar
     {
-        public tblHastaneler()
+        public tblFirmalar()
         {
-            this.tblDoktorlar = new HashSet<tblDoktorlar>();
-            this.tblDoktorlar1 = new HashSet<tblDoktorlar>();
-            this.tblDoktorlar2 = new HashSet<tblDoktorlar>();
-            this.tblHastaneDetaylar = new HashSet<tblHastaneDetaylar>();
+            this.tblFirmaDetaylar = new HashSet<tblFirmaDetaylar>();
+            this.tblUrunKayitUst = new HashSet<tblUrunKayitUst>();
         }
     
         public int Id { get; set; }
         public string Adi { get; set; }
-        public Nullable<int> TipId { get; set; }
         public string Adres { get; set; }
         public Nullable<int> SehirId { get; set; }
-        public string Tel { get; set; }
-        public string CariAdi { get; set; }
+        public string FirmaTip { get; set; }
         public string VergiDairesi { get; set; }
         public string VergiNo { get; set; }
+        public string Tel { get; set; }
+        public string Email { get; set; }
+        public string Web { get; set; }
     
         public virtual Sehirler Sehirler { get; set; }
-        public virtual ICollection<tblDoktorlar> tblDoktorlar { get; set; }
-        public virtual ICollection<tblDoktorlar> tblDoktorlar1 { get; set; }
-        public virtual ICollection<tblDoktorlar> tblDoktorlar2 { get; set; }
-        public virtual ICollection<tblHastaneDetaylar> tblHastaneDetaylar { get; set; }
-        public virtual tblHastaneTipleri tblHastaneTipleri { get; set; }
+        public virtual ICollection<tblFirmaDetaylar> tblFirmaDetaylar { get; set; }
+        public virtual ICollection<tblUrunKayitUst> tblUrunKayitUst { get; set; }
     }
 }

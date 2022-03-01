@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PnlUst = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnKapat = new System.Windows.Forms.Button();
@@ -40,18 +40,7 @@
             this.BtnKaydet = new System.Windows.Forms.Button();
             this.BtnGüncelle = new System.Windows.Forms.Button();
             this.SpcUrunGiris = new System.Windows.Forms.SplitContainer();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sira = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Barkod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UrunKodu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LotSeri = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GirisAdet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Not = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UrunId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Uts = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.UTarih = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SKTarihi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Liste = new System.Windows.Forms.DataGridView();
             this.TxtAciklama = new System.Windows.Forms.TextBox();
             this.a = new System.Windows.Forms.Label();
             this.TxtGirisTarih = new System.Windows.Forms.DateTimePicker();
@@ -66,12 +55,23 @@
             this.label3 = new System.Windows.Forms.Label();
             this.TxtGirisId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sira = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Barkod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UrunKodu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LotSeri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GirisAdet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Not = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UrunId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Uts = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.UTarih = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SKTarihi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PnlUst.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SpcUrunGiris)).BeginInit();
             this.SpcUrunGiris.Panel1.SuspendLayout();
             this.SpcUrunGiris.Panel2.SuspendLayout();
             this.SpcUrunGiris.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Liste)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlUst
@@ -111,6 +111,7 @@
             this.BtnKapat.Size = new System.Drawing.Size(49, 43);
             this.BtnKapat.TabIndex = 17;
             this.BtnKapat.UseVisualStyleBackColor = true;
+            this.BtnKapat.Click += new System.EventHandler(this.BtnKapat_Click);
             // 
             // BtnTemiz
             // 
@@ -172,7 +173,7 @@
             // 
             // SpcUrunGiris.Panel1
             // 
-            this.SpcUrunGiris.Panel1.Controls.Add(this.dataGridView1);
+            this.SpcUrunGiris.Panel1.Controls.Add(this.Liste);
             this.SpcUrunGiris.Panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             // 
             // SpcUrunGiris.Panel2
@@ -196,18 +197,18 @@
             this.SpcUrunGiris.SplitterDistance = 1137;
             this.SpcUrunGiris.TabIndex = 1;
             // 
-            // dataGridView1
+            // Liste
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Liste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.Liste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Liste.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Sira,
             this.Barkod,
@@ -219,106 +220,30 @@
             this.Uts,
             this.UTarih,
             this.SKTarihi});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(1133, 567);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // Id
-            // 
-            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
-            // 
-            // Sira
-            // 
-            this.Sira.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Sira.HeaderText = "Sira";
-            this.Sira.Name = "Sira";
-            this.Sira.Width = 50;
-            // 
-            // Barkod
-            // 
-            this.Barkod.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Barkod.HeaderText = "Barkod";
-            this.Barkod.Name = "Barkod";
-            this.Barkod.Visible = false;
-            // 
-            // UrunKodu
-            // 
-            this.UrunKodu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.UrunKodu.HeaderText = "UrunKodu";
-            this.UrunKodu.Name = "UrunKodu";
-            // 
-            // LotSeri
-            // 
-            this.LotSeri.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.LotSeri.HeaderText = "Lot Seri No";
-            this.LotSeri.Name = "LotSeri";
-            this.LotSeri.Width = 79;
-            // 
-            // GirisAdet
-            // 
-            this.GirisAdet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.GirisAdet.HeaderText = "Giris Adet";
-            this.GirisAdet.Name = "GirisAdet";
-            this.GirisAdet.Width = 71;
-            // 
-            // Not
-            // 
-            this.Not.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Not.HeaderText = "Not";
-            this.Not.Name = "Not";
-            this.Not.Width = 49;
-            // 
-            // UrunId
-            // 
-            this.UrunId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.UrunId.HeaderText = "Urun Id";
-            this.UrunId.Name = "UrunId";
-            this.UrunId.Visible = false;
-            // 
-            // Uts
-            // 
-            this.Uts.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Uts.HeaderText = "Uts";
-            this.Uts.Name = "Uts";
-            this.Uts.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Uts.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Uts.Width = 48;
-            // 
-            // UTarih
-            // 
-            this.UTarih.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.UTarih.HeaderText = "Uretim Tarih";
-            this.UTarih.Name = "UTarih";
-            this.UTarih.Width = 82;
-            // 
-            // SKTarihi
-            // 
-            this.SKTarihi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.SKTarihi.HeaderText = "Son Kullanma Tarihi";
-            this.SKTarihi.Name = "SKTarihi";
-            this.SKTarihi.Width = 115;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Liste.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Liste.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Liste.Location = new System.Drawing.Point(0, 0);
+            this.Liste.Name = "Liste";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Liste.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.Liste.RowHeadersVisible = false;
+            this.Liste.Size = new System.Drawing.Size(1133, 567);
+            this.Liste.TabIndex = 0;
+            this.Liste.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Liste_CellEndEdit);
+            this.Liste.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.Liste_EditingControlShowing);
             // 
             // TxtAciklama
             // 
@@ -489,6 +414,86 @@
             this.label2.Text = "Giris No";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Id
+            // 
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            this.Id.Width = 22;
+            // 
+            // Sira
+            // 
+            this.Sira.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Sira.HeaderText = "Sira";
+            this.Sira.Name = "Sira";
+            this.Sira.Width = 50;
+            // 
+            // Barkod
+            // 
+            this.Barkod.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Barkod.HeaderText = "Barkod";
+            this.Barkod.Name = "Barkod";
+            this.Barkod.Visible = false;
+            this.Barkod.Width = 66;
+            // 
+            // UrunKodu
+            // 
+            this.UrunKodu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.UrunKodu.HeaderText = "UrunKodu";
+            this.UrunKodu.Name = "UrunKodu";
+            // 
+            // LotSeri
+            // 
+            this.LotSeri.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.LotSeri.HeaderText = "Lot Seri No";
+            this.LotSeri.Name = "LotSeri";
+            this.LotSeri.Width = 85;
+            // 
+            // GirisAdet
+            // 
+            this.GirisAdet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.GirisAdet.HeaderText = "Giris Adet";
+            this.GirisAdet.Name = "GirisAdet";
+            this.GirisAdet.Width = 77;
+            // 
+            // Not
+            // 
+            this.Not.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Not.HeaderText = "Not";
+            this.Not.Name = "Not";
+            this.Not.Width = 49;
+            // 
+            // UrunId
+            // 
+            this.UrunId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.UrunId.HeaderText = "Urun Id";
+            this.UrunId.Name = "UrunId";
+            this.UrunId.Width = 67;
+            // 
+            // Uts
+            // 
+            this.Uts.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Uts.HeaderText = "Uts";
+            this.Uts.Name = "Uts";
+            this.Uts.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Uts.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Uts.Width = 48;
+            // 
+            // UTarih
+            // 
+            this.UTarih.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.UTarih.HeaderText = "Uretim Tarih";
+            this.UTarih.Name = "UTarih";
+            this.UTarih.Width = 89;
+            // 
+            // SKTarihi
+            // 
+            this.SKTarihi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.SKTarihi.HeaderText = "Son Kullanma Tarihi";
+            this.SKTarihi.Name = "SKTarihi";
+            this.SKTarihi.Width = 115;
+            // 
             // UrunGiris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -506,7 +511,7 @@
             this.SpcUrunGiris.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SpcUrunGiris)).EndInit();
             this.SpcUrunGiris.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Liste)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -536,7 +541,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TxtGirisId;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Liste;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sira;
         private System.Windows.Forms.DataGridViewTextBoxColumn Barkod;

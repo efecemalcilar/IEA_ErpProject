@@ -12,16 +12,18 @@ namespace ProjeAtHome.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class tblHastaneTipleri
+    public partial class tblHastaneDetaylar
     {
-        public tblHastaneTipleri()
-        {
-            this.tblHastaneler = new HashSet<tblHastaneler>();
-        }
-    
         public int Id { get; set; }
-        public string TipAdi { get; set; }
+        public Nullable<int> GirisId { get; set; }
+        public string GirisAdi { get; set; }
+        public string YetkiliAdi { get; set; }
+        public Nullable<int> DepartmanId { get; set; }
+        public string Tel { get; set; }
+        public string Gsm { get; set; }
+        public string Email { get; set; }
     
-        public virtual ICollection<tblHastaneler> tblHastaneler { get; set; }
+        public virtual tblDepartmanlar tblDepartmanlar { get; set; }
+        public virtual tblHastaneler tblHastaneler { get; set; }
     }
 }

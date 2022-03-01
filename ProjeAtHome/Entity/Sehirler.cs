@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjeAtHome
+namespace ProjeAtHome.Entity
 {
     using System;
     using System.Collections.Generic;
@@ -16,13 +16,19 @@ namespace ProjeAtHome
     {
         public Sehirler()
         {
+            this.tblDoktorlar = new HashSet<tblDoktorlar>();
+            this.tblFirmalar = new HashSet<tblFirmalar>();
             this.tblHastaneler = new HashSet<tblHastaneler>();
+            this.tblPersoneller = new HashSet<tblPersoneller>();
         }
     
         public int Id { get; set; }
         public string code { get; set; }
         public string name { get; set; }
     
+        public virtual ICollection<tblDoktorlar> tblDoktorlar { get; set; }
+        public virtual ICollection<tblFirmalar> tblFirmalar { get; set; }
         public virtual ICollection<tblHastaneler> tblHastaneler { get; set; }
+        public virtual ICollection<tblPersoneller> tblPersoneller { get; set; }
     }
 }

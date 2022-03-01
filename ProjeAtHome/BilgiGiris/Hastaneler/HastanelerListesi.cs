@@ -8,13 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProjeAtHome.Entity;
 
 namespace ProjeAtHome.BilgiGiris.Hastaneler
 {
     public partial class HastanelerListesi : Form
     {
-
-        private readonly ProjeAtHome.Entity.ErpPro102SEntities _db = new Entity.ErpPro102SEntities();
+        private readonly Entity.ErpPro102SEntities2 _db = new ErpPro102SEntities2();
         private List<tblHastaneler> hstList;
         private int secimId = -1;
         public bool Secim = false;

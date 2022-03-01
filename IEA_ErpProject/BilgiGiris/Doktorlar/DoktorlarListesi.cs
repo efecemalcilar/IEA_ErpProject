@@ -62,34 +62,65 @@ namespace IEA_ErpProject.BilgiGiris.Doktorlar
 
         private void Liste_DoubleClick(object sender, EventArgs e)
         {
-            if (Liste.CurrentRow != null) secimId = (int?)
-            Liste.CurrentRow.Cells[1].Value ?? -1;
+            //if (Liste.CurrentRow != null) secimId = (int?)
+            //Liste.CurrentRow.Cells[1].Value ?? -1;
 
-            if (secimId > 0 )
+            //if (secimId > 0 )
+            //{
+            //    if (Application.OpenForms["DoktorGiris"] == null && Application.OpenForms["UrunGiris"]== null) // doktorlar formu ve urun gırıs acık degılse anlamına gelir.
+            //    {
+            //        AnaSayfa.Aktarma = secimId;
+            //        Close();
+            //        f.DoktorlarGirisAc(secimId);
+            //    }
+
+            //    else if (Application.OpenForms["UrunGiris"] != null)
+            //    {
+            //        AnaSayfa.Aktarma = secimId;
+            //        Close();
+            //    }
+
+            //}                     // tıkladığımda hangi satır seçiliyse currentRow kullanırız.
+            //                      // Eğer normal bir değer gelirse burdaki değeri al int e cevir , eger null gelirse -1 yaz.
+
+            //else if (Application.OpenForms["DoktorGiris"] != null)
+            //{
+            //    DoktorGiris frm = Application.OpenForms["DoktorGiris"] as DoktorGiris;  // Acık olan formdan bilgileri al frm nin içerisine getir.
+
+            //    frm.Ac(secimId);
+            //    Close();
+
+            if (Liste.CurrentRow != null)
+                secimId = (int?)
+                    Liste.CurrentRow.Cells[1].Value ?? -1;
+
+            if (secimId > 0 && Secim && Application.OpenForms["DoktorGiris"] == null)
             {
-                if (Application.OpenForms["DoktorGiris"] == null && Application.OpenForms["UrunGiris"]== null)
-                {
-                    AnaSayfa.Aktarma = secimId;
-                    Close();
-                    f.DoktorlarGirisAc(secimId);
-                }
+                AnaSayfa.Aktarma = secimId;
+                Close();
 
-                else if (Application.OpenForms["UrunGiris"] != null)
-                {
-                    AnaSayfa.Aktarma = secimId;
-                    Close();
-                }
-                
-            }                     // tıkladığımda hangi satır seçiliyse currentRow kullanırız.
-                                  // Eğer normal bir değer gelirse burdaki değeri al int e cevir , eger null gelirse -1 yaz.
 
-            else if (Application.OpenForms["DoktorGiris"] != null)
+            } // tıkladığımda hangi satır seçiliyse currentRow kullanırız.
+            // Eğer normal bir değer gelirse burdaki değeri al int e cevir , eger null gelirse -1 yaz.
+
+            else if (Secim && Application.OpenForms["DoktorGiris"] != null)
             {
-                DoktorGiris frm = Application.OpenForms["DoktorGiris"] as DoktorGiris;  // Acık olan formdan bilgileri al frm nin içerisine getir.
-
+                DoktorGiris frm = Application.OpenForms["DoktorGiris"] as DoktorGiris;
                 frm.Ac(secimId);
                 Close();
+
             }
+
+
+            else if (!Secim)
+            {
+                f.DoktorlarGirisAc(secimId);
+                Close();
+            }
+
+
+
+
         }
     }
 }

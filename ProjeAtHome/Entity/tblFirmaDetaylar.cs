@@ -7,16 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjeAtHome
+namespace ProjeAtHome.Entity
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class tblDetaylar
+    public partial class tblFirmaDetaylar
     {
         public int Id { get; set; }
         public Nullable<int> GirisId { get; set; }
-        public string GirisAdi { get; set; }
         public string YetkiliAdi { get; set; }
         public Nullable<int> DepartmanId { get; set; }
         public string Tel { get; set; }
@@ -24,6 +23,6 @@ namespace ProjeAtHome
         public string Email { get; set; }
     
         public virtual tblDepartmanlar tblDepartmanlar { get; set; }
-        public virtual tblHastaneler tblHastaneler { get; set; }
+        public virtual tblFirmalar tblFirmalar { get; set; }
     }
 }
