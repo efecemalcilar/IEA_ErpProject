@@ -152,6 +152,7 @@
             this.BtnKaydet.Size = new System.Drawing.Size(49, 43);
             this.BtnKaydet.TabIndex = 13;
             this.BtnKaydet.UseVisualStyleBackColor = true;
+            this.BtnKaydet.Click += new System.EventHandler(this.BtnKaydet_Click);
             // 
             // BtnGüncelle
             // 
@@ -318,6 +319,9 @@
             // 
             this.TxtGirisTuru.Dock = System.Windows.Forms.DockStyle.Top;
             this.TxtGirisTuru.FormattingEnabled = true;
+            this.TxtGirisTuru.Items.AddRange(new object[] {
+            "Normal Giris",
+            "Muhtelif Giris"});
             this.TxtGirisTuru.Location = new System.Drawing.Point(0, 224);
             this.TxtGirisTuru.Name = "TxtGirisTuru";
             this.TxtGirisTuru.Size = new System.Drawing.Size(298, 21);
@@ -434,7 +438,6 @@
             this.Barkod.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Barkod.HeaderText = "Barkod";
             this.Barkod.Name = "Barkod";
-            this.Barkod.Visible = false;
             this.Barkod.Width = 66;
             // 
             // UrunKodu
@@ -474,10 +477,12 @@
             // Uts
             // 
             this.Uts.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Uts.FalseValue = "False";
             this.Uts.HeaderText = "Uts";
             this.Uts.Name = "Uts";
             this.Uts.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Uts.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Uts.TrueValue = "True";
             this.Uts.Width = 48;
             // 
             // UTarih

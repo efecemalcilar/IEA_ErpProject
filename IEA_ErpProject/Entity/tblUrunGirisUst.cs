@@ -27,5 +27,6 @@ namespace IEA_ErpProject.Entity
         public Nullable<int> CreatedUser { get; set; }
         public Nullable<System.DateTime> UpdateDate { get; set; }
         public Nullable<int> UpdateUser { get; set; }
+        public string Aciklama { get; set; }
     }
 }
