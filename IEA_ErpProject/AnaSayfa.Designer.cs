@@ -35,6 +35,7 @@
             this.pnlSol = new System.Windows.Forms.Panel();
             this.scMenu = new System.Windows.Forms.SplitContainer();
             this.tvMenu = new System.Windows.Forms.TreeView();
+            this.btnUrunGiris = new System.Windows.Forms.Button();
             this.btnBilgiGiris = new System.Windows.Forms.Button();
             this.pnlsolUst = new System.Windows.Forms.Panel();
             this.btnSolUstCollapse = new System.Windows.Forms.Button();
@@ -42,7 +43,7 @@
             this.btnSolUstAra = new System.Windows.Forms.Button();
             this.txtSolUstAra = new System.Windows.Forms.TextBox();
             this.splitter2 = new System.Windows.Forms.Splitter();
-            this.btnUrunGiris = new System.Windows.Forms.Button();
+            this.BtnStokIslemleri = new System.Windows.Forms.Button();
             this.tabPGenel.SuspendLayout();
             this.pnlSol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMenu)).BeginInit();
@@ -120,6 +121,7 @@
             // scMenu.Panel2
             // 
             this.scMenu.Panel2.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.scMenu.Panel2.Controls.Add(this.BtnStokIslemleri);
             this.scMenu.Panel2.Controls.Add(this.btnUrunGiris);
             this.scMenu.Panel2.Controls.Add(this.btnBilgiGiris);
             this.scMenu.Size = new System.Drawing.Size(474, 479);
@@ -135,9 +137,19 @@
             this.tvMenu.TabIndex = 0;
             this.tvMenu.DoubleClick += new System.EventHandler(this.tvMenu_DoubleClick);
             // 
+            // btnUrunGiris
+            // 
+            this.btnUrunGiris.Location = new System.Drawing.Point(99, 3);
+            this.btnUrunGiris.Name = "btnUrunGiris";
+            this.btnUrunGiris.Size = new System.Drawing.Size(79, 52);
+            this.btnUrunGiris.TabIndex = 1;
+            this.btnUrunGiris.Text = "Urun Islemleri";
+            this.btnUrunGiris.UseVisualStyleBackColor = true;
+            this.btnUrunGiris.Click += new System.EventHandler(this.btnUrunGiris_Click);
+            // 
             // btnBilgiGiris
             // 
-            this.btnBilgiGiris.Location = new System.Drawing.Point(10, 15);
+            this.btnBilgiGiris.Location = new System.Drawing.Point(4, 3);
             this.btnBilgiGiris.Name = "btnBilgiGiris";
             this.btnBilgiGiris.Size = new System.Drawing.Size(79, 52);
             this.btnBilgiGiris.TabIndex = 0;
@@ -211,15 +223,15 @@
             this.splitter2.TabIndex = 3;
             this.splitter2.TabStop = false;
             // 
-            // btnUrunGiris
+            // BtnStokIslemleri
             // 
-            this.btnUrunGiris.Location = new System.Drawing.Point(95, 15);
-            this.btnUrunGiris.Name = "btnUrunGiris";
-            this.btnUrunGiris.Size = new System.Drawing.Size(79, 52);
-            this.btnUrunGiris.TabIndex = 1;
-            this.btnUrunGiris.Text = "Urun Islemleri";
-            this.btnUrunGiris.UseVisualStyleBackColor = true;
-            this.btnUrunGiris.Click += new System.EventHandler(this.btnUrunGiris_Click);
+            this.BtnStokIslemleri.Location = new System.Drawing.Point(199, 3);
+            this.BtnStokIslemleri.Name = "BtnStokIslemleri";
+            this.BtnStokIslemleri.Size = new System.Drawing.Size(75, 52);
+            this.BtnStokIslemleri.TabIndex = 2;
+            this.BtnStokIslemleri.Text = "Stok Durum";
+            this.BtnStokIslemleri.UseVisualStyleBackColor = true;
+            this.BtnStokIslemleri.Click += new System.EventHandler(this.BtnStokIslemleri_Click);
             // 
             // AnaSayfa
             // 
@@ -234,6 +246,7 @@
             this.IsMdiContainer = true;
             this.Name = "AnaSayfa";
             this.Text = "Ana Sayfa";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AnaSayfa_Load);
             this.tabPGenel.ResumeLayout(false);
             this.pnlSol.ResumeLayout(false);
@@ -264,6 +277,7 @@
         private System.Windows.Forms.TreeView tvMenu;
         private System.Windows.Forms.Button btnBilgiGiris;
         private System.Windows.Forms.Button btnUrunGiris;
+        private System.Windows.Forms.Button BtnStokIslemleri;
     }
 }
 

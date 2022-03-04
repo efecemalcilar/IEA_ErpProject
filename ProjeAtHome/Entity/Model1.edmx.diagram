@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f548de099fc8453f8db2cae4bd4e80be" Name="Diagram1" ZoomLevel="83">
+        <EntityTypeShape EntityType="ErpPro102SModel.Sehirler" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblDepartmanlar" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblDoktorlar" Width="1.5" PointX="9.625" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblFirmalar" Width="1.5" PointX="12" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblHastaneler" Width="1.5" PointX="4.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblPersoneller" Width="1.5" PointX="9.375" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblDoktorlar_Sehirler" ManuallyRouted="false" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblFirmalar_Sehirler" ManuallyRouted="false" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblHastaneler_Sehirler" ManuallyRouted="false" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblPersoneller_Sehirler" ManuallyRouted="false" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblPersoneller_tblDepartmanlar" ManuallyRouted="false" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblDoktorlar_tblHastaneler1" ManuallyRouted="false" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblDoktorlar_tblHastaneler2" ManuallyRouted="false" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblDoktorlar_tblHastaneler3" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ErpPro102SModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblFirmaDetaylar" Width="1.5" PointX="15.625" PointY="6.625" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblHastaneDetaylar" Width="1.5" PointX="12.625" PointY="4.375" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblHastaneTipleri" Width="1.5" PointX="2.375" PointY="8.875" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblStokDurum" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblUrunGirisAlt" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblUrunGirisUst" Width="1.5" PointX="6.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblUrunKayitAlt" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="ErpPro102SModel.tblUrunKayitUst" Width="1.5" PointX="14.625" PointY="12.25" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblFirmaDetaylar_tblDepartmanlar" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblHastaneDetaylar_tblDepartmanlar" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblFirmaDetaylar_tblFirmalar" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblUrunKayitUst_tblFirmalar" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblHastanedetaylar_tblHastaneler" />
+        <AssociationConnector Association="ErpPro102SModel.FK_tblHastaneler_tblHastaneTipleri_" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
