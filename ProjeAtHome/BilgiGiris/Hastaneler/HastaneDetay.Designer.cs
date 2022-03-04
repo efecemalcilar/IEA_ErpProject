@@ -46,6 +46,7 @@
             this.LblHastaneId = new System.Windows.Forms.Label();
             this.LblHastaneAdi = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.BtnKayit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Liste)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,6 +127,7 @@
             this.BtnEkle.TabIndex = 16;
             this.BtnEkle.Text = "Ekle";
             this.BtnEkle.UseVisualStyleBackColor = true;
+            this.BtnEkle.Click += new System.EventHandler(this.BtnEkle_Click_1);
             // 
             // TxtGsm
             // 
@@ -202,11 +204,25 @@
             this.label1.Text = "Hastane Detay";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // BtnKayit
+            // 
+            this.BtnKayit.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnKayit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnKayit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BtnKayit.Location = new System.Drawing.Point(864, 445);
+            this.BtnKayit.Name = "BtnKayit";
+            this.BtnKayit.Size = new System.Drawing.Size(120, 60);
+            this.BtnKayit.TabIndex = 18;
+            this.BtnKayit.Text = "Kaydet";
+            this.BtnKayit.UseVisualStyleBackColor = false;
+            this.BtnKayit.Click += new System.EventHandler(this.BtnKayit_Click);
+            // 
             // HastaneDetay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 551);
+            this.Controls.Add(this.BtnKayit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnEkle);
             this.Controls.Add(this.TxtGsm);
@@ -246,5 +262,6 @@
         public System.Windows.Forms.Label LblHastaneId;
         public System.Windows.Forms.Label LblHastaneAdi;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BtnKayit;
     }
 }

@@ -35,6 +35,7 @@
             this.BtnTemizle = new System.Windows.Forms.Button();
             this.BtnKapat = new System.Windows.Forms.Button();
             this.scHastane = new System.Windows.Forms.SplitContainer();
+            this.BtnDetayEkle = new System.Windows.Forms.Button();
             this.Liste = new System.Windows.Forms.DataGridView();
             this.Sira = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,7 +67,7 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BtnDetayEkle = new System.Windows.Forms.Button();
+            this.BtnDetayGoster = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.scHastane)).BeginInit();
             this.scHastane.Panel1.SuspendLayout();
             this.scHastane.Panel2.SuspendLayout();
@@ -139,6 +140,7 @@
             this.BtnKapat.Size = new System.Drawing.Size(49, 43);
             this.BtnKapat.TabIndex = 31;
             this.BtnKapat.UseVisualStyleBackColor = true;
+            this.BtnKapat.Click += new System.EventHandler(this.BtnKapat_Click);
             // 
             // scHastane
             // 
@@ -148,6 +150,7 @@
             // 
             // scHastane.Panel1
             // 
+            this.scHastane.Panel1.Controls.Add(this.BtnDetayGoster);
             this.scHastane.Panel1.Controls.Add(this.BtnDetayEkle);
             this.scHastane.Panel1.Controls.Add(this.Liste);
             this.scHastane.Panel1.Controls.Add(this.label8);
@@ -174,6 +177,20 @@
             this.scHastane.Size = new System.Drawing.Size(1413, 547);
             this.scHastane.SplitterDistance = 271;
             this.scHastane.TabIndex = 33;
+            // 
+            // BtnDetayEkle
+            // 
+            this.BtnDetayEkle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnDetayEkle.BackColor = System.Drawing.Color.Khaki;
+            this.BtnDetayEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnDetayEkle.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BtnDetayEkle.Location = new System.Drawing.Point(1256, 218);
+            this.BtnDetayEkle.Name = "BtnDetayEkle";
+            this.BtnDetayEkle.Size = new System.Drawing.Size(118, 37);
+            this.BtnDetayEkle.TabIndex = 51;
+            this.BtnDetayEkle.Text = "Detay Ekle";
+            this.BtnDetayEkle.UseVisualStyleBackColor = false;
+            this.BtnDetayEkle.Click += new System.EventHandler(this.BtnDetayEkle_Click_1);
             // 
             // Liste
             // 
@@ -438,18 +455,20 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Width = 56;
             // 
-            // BtnDetayEkle
+            // BtnDetayGoster
             // 
-            this.BtnDetayEkle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnDetayEkle.BackColor = System.Drawing.Color.Khaki;
-            this.BtnDetayEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BtnDetayEkle.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnDetayEkle.Location = new System.Drawing.Point(1256, 218);
-            this.BtnDetayEkle.Name = "BtnDetayEkle";
-            this.BtnDetayEkle.Size = new System.Drawing.Size(118, 37);
-            this.BtnDetayEkle.TabIndex = 51;
-            this.BtnDetayEkle.Text = "Detay Ekle";
-            this.BtnDetayEkle.UseVisualStyleBackColor = false;
+            this.BtnDetayGoster.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnDetayGoster.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnDetayGoster.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnDetayGoster.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BtnDetayGoster.Location = new System.Drawing.Point(1256, 163);
+            this.BtnDetayGoster.Name = "BtnDetayGoster";
+            this.BtnDetayGoster.Size = new System.Drawing.Size(118, 37);
+            this.BtnDetayGoster.TabIndex = 52;
+            this.BtnDetayGoster.Text = "Detay Goster";
+            this.BtnDetayGoster.UseVisualStyleBackColor = false;
+            this.BtnDetayGoster.Visible = false;
+            this.BtnDetayGoster.Click += new System.EventHandler(this.BtnDetayGoster_Click);
             // 
             // HastaneGiris
             // 
@@ -518,5 +537,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.Button BtnDetayEkle;
+        private System.Windows.Forms.Button BtnDetayGoster;
     }
 }

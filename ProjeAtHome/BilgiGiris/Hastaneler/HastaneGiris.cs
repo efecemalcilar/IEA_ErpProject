@@ -305,11 +305,37 @@ namespace ProjeAtHome.BilgiGiris.Hastaneler
 
 
 
-        private void BtnDetayEkle_Click(object sender, EventArgs e)
-        {
+        
 
+        private void BtnDetayEkle_Click_1(object sender, EventArgs e)
+        {
+            string adi = "";
+            int id = -1;
+
+            if (secimId>0)
+            {
+                adi = TxtHadi.Text;
+                id = int.Parse(TxtHastaneBul.Text);
+                f.HastaneDetayAc(adi,id);
+            }
+
+            else
+            {
+                MessageBox.Show("Once bir kayit secin !!!");
+                return;
+            }
         }
 
+        private void BtnDetayGoster_Click(object sender, EventArgs e)
+        {
+            HastaneDetayGoster goster = new HastaneDetayGoster();
+            goster.Hadi = TxtHadi.Text;
+            goster.ShowDialog();
+        }
 
+        private void BtnKapat_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

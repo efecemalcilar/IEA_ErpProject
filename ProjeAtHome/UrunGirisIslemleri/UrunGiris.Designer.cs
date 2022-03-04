@@ -1,4 +1,4 @@
-﻿namespace IEA_ErpProject.UrunGirisIslemleri
+﻿namespace ProjeAtHome.UrunGirisIslemleri
 {
     partial class UrunGiris
     {
@@ -28,18 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.PnlUst = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnKapat = new System.Windows.Forms.Button();
             this.BtnTemiz = new System.Windows.Forms.Button();
             this.BtnTemizle = new System.Windows.Forms.Button();
             this.BtnSil = new System.Windows.Forms.Button();
             this.BtnKaydet = new System.Windows.Forms.Button();
             this.BtnGüncelle = new System.Windows.Forms.Button();
-            this.SpcUrunGiris = new System.Windows.Forms.SplitContainer();
+            this.TxtAciklama = new System.Windows.Forms.TextBox();
+            this.a = new System.Windows.Forms.Label();
+            this.SKTarihi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UTarih = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Uts = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.TxtGirisTarih = new System.Windows.Forms.DateTimePicker();
             this.Liste = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sira = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,12 +52,9 @@
             this.GirisAdet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Not = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UrunId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Uts = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.UTarih = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SKTarihi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TxtAciklama = new System.Windows.Forms.TextBox();
-            this.a = new System.Windows.Forms.Label();
-            this.TxtGirisTarih = new System.Windows.Forms.DateTimePicker();
+            this.PnlUst = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SpcUrunGiris = new System.Windows.Forms.SplitContainer();
             this.label7 = new System.Windows.Forms.Label();
             this.TxtFaturaNo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -66,47 +66,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.TxtGirisId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.Liste)).BeginInit();
             this.PnlUst.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SpcUrunGiris)).BeginInit();
             this.SpcUrunGiris.Panel1.SuspendLayout();
             this.SpcUrunGiris.Panel2.SuspendLayout();
             this.SpcUrunGiris.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Liste)).BeginInit();
             this.SuspendLayout();
-            // 
-            // PnlUst
-            // 
-            this.PnlUst.BackColor = System.Drawing.Color.SteelBlue;
-            this.PnlUst.Controls.Add(this.label1);
-            this.PnlUst.Controls.Add(this.BtnKapat);
-            this.PnlUst.Controls.Add(this.BtnTemiz);
-            this.PnlUst.Controls.Add(this.BtnTemizle);
-            this.PnlUst.Controls.Add(this.BtnSil);
-            this.PnlUst.Controls.Add(this.BtnKaydet);
-            this.PnlUst.Controls.Add(this.BtnGüncelle);
-            this.PnlUst.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlUst.Location = new System.Drawing.Point(0, 0);
-            this.PnlUst.Name = "PnlUst";
-            this.PnlUst.Size = new System.Drawing.Size(1443, 57);
-            this.PnlUst.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(635, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 43);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Urun Giris";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BtnKapat
             // 
             this.BtnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnKapat.BackgroundImage = global::IEA_ErpProject.Properties.Resources.exit_64;
             this.BtnKapat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnKapat.Location = new System.Drawing.Point(1323, 12);
+            this.BtnKapat.Location = new System.Drawing.Point(1383, 12);
             this.BtnKapat.Name = "BtnKapat";
             this.BtnKapat.Size = new System.Drawing.Size(49, 43);
             this.BtnKapat.TabIndex = 17;
@@ -115,7 +87,6 @@
             // 
             // BtnTemiz
             // 
-            this.BtnTemiz.BackgroundImage = global::IEA_ErpProject.Properties.Resources.modern_laser_printer_icon_digital_green_modern_laser_printer_icon_digital_green_any_design_isolated_white_vector_115768523;
             this.BtnTemiz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnTemiz.Location = new System.Drawing.Point(283, 12);
             this.BtnTemiz.Name = "BtnTemiz";
@@ -125,18 +96,15 @@
             // 
             // BtnTemizle
             // 
-            this.BtnTemizle.BackgroundImage = global::IEA_ErpProject.Properties.Resources.clean;
             this.BtnTemizle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnTemizle.Location = new System.Drawing.Point(218, 12);
             this.BtnTemizle.Name = "BtnTemizle";
             this.BtnTemizle.Size = new System.Drawing.Size(49, 43);
             this.BtnTemizle.TabIndex = 16;
             this.BtnTemizle.UseVisualStyleBackColor = true;
-            this.BtnTemizle.Click += new System.EventHandler(this.BtnTemizle_Click);
             // 
             // BtnSil
             // 
-            this.BtnSil.BackgroundImage = global::IEA_ErpProject.Properties.Resources.cop24x24;
             this.BtnSil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnSil.Location = new System.Drawing.Point(152, 12);
             this.BtnSil.Name = "BtnSil";
@@ -146,7 +114,7 @@
             // 
             // BtnKaydet
             // 
-            this.BtnKaydet.BackgroundImage = global::IEA_ErpProject.Properties.Resources.Save_icon64x64;
+            this.BtnKaydet.BackgroundImage = global::ProjeAtHome.Properties.Resources.Save_icon64x64;
             this.BtnKaydet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnKaydet.Location = new System.Drawing.Point(16, 12);
             this.BtnKaydet.Name = "BtnKaydet";
@@ -157,7 +125,6 @@
             // 
             // BtnGüncelle
             // 
-            this.BtnGüncelle.BackgroundImage = global::IEA_ErpProject.Properties.Resources.Update32x32;
             this.BtnGüncelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnGüncelle.Location = new System.Drawing.Point(85, 12);
             this.BtnGüncelle.Name = "BtnGüncelle";
@@ -165,50 +132,73 @@
             this.BtnGüncelle.TabIndex = 14;
             this.BtnGüncelle.UseVisualStyleBackColor = true;
             // 
-            // SpcUrunGiris
+            // TxtAciklama
             // 
-            this.SpcUrunGiris.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.SpcUrunGiris.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SpcUrunGiris.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.SpcUrunGiris.Location = new System.Drawing.Point(0, 57);
-            this.SpcUrunGiris.Name = "SpcUrunGiris";
+            this.TxtAciklama.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TxtAciklama.Location = new System.Drawing.Point(0, 386);
+            this.TxtAciklama.Multiline = true;
+            this.TxtAciklama.Name = "TxtAciklama";
+            this.TxtAciklama.Size = new System.Drawing.Size(298, 129);
+            this.TxtAciklama.TabIndex = 32;
             // 
-            // SpcUrunGiris.Panel1
+            // a
             // 
-            this.SpcUrunGiris.Panel1.Controls.Add(this.Liste);
-            this.SpcUrunGiris.Panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.a.BackColor = System.Drawing.Color.SteelBlue;
+            this.a.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.a.Dock = System.Windows.Forms.DockStyle.Top;
+            this.a.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.a.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.a.Location = new System.Drawing.Point(0, 355);
+            this.a.Name = "a";
+            this.a.Size = new System.Drawing.Size(298, 31);
+            this.a.TabIndex = 31;
+            this.a.Text = "Aciklama";
+            this.a.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // SpcUrunGiris.Panel2
+            // SKTarihi
             // 
-            this.SpcUrunGiris.Panel2.BackColor = System.Drawing.Color.SteelBlue;
-            this.SpcUrunGiris.Panel2.Controls.Add(this.TxtAciklama);
-            this.SpcUrunGiris.Panel2.Controls.Add(this.a);
-            this.SpcUrunGiris.Panel2.Controls.Add(this.TxtGirisTarih);
-            this.SpcUrunGiris.Panel2.Controls.Add(this.label7);
-            this.SpcUrunGiris.Panel2.Controls.Add(this.TxtFaturaNo);
-            this.SpcUrunGiris.Panel2.Controls.Add(this.label6);
-            this.SpcUrunGiris.Panel2.Controls.Add(this.TxtGirisTuru);
-            this.SpcUrunGiris.Panel2.Controls.Add(this.label5);
-            this.SpcUrunGiris.Panel2.Controls.Add(this.TxtCariAdi);
-            this.SpcUrunGiris.Panel2.Controls.Add(this.label4);
-            this.SpcUrunGiris.Panel2.Controls.Add(this.TxtCariTur);
-            this.SpcUrunGiris.Panel2.Controls.Add(this.label3);
-            this.SpcUrunGiris.Panel2.Controls.Add(this.TxtGirisId);
-            this.SpcUrunGiris.Panel2.Controls.Add(this.label2);
-            this.SpcUrunGiris.Size = new System.Drawing.Size(1443, 571);
-            this.SpcUrunGiris.SplitterDistance = 1137;
-            this.SpcUrunGiris.TabIndex = 1;
+            this.SKTarihi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.SKTarihi.HeaderText = "Son Kullanma Tarihi";
+            this.SKTarihi.Name = "SKTarihi";
+            this.SKTarihi.Width = 115;
+            // 
+            // UTarih
+            // 
+            this.UTarih.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.UTarih.HeaderText = "Uretim Tarih";
+            this.UTarih.Name = "UTarih";
+            this.UTarih.Width = 82;
+            // 
+            // Uts
+            // 
+            this.Uts.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Uts.FalseValue = "False";
+            this.Uts.HeaderText = "Uts";
+            this.Uts.Name = "Uts";
+            this.Uts.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Uts.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Uts.TrueValue = "True";
+            this.Uts.Width = 48;
+            // 
+            // TxtGirisTarih
+            // 
+            this.TxtGirisTarih.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TxtGirisTarih.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.TxtGirisTarih.Location = new System.Drawing.Point(0, 335);
+            this.TxtGirisTarih.Name = "TxtGirisTarih";
+            this.TxtGirisTarih.Size = new System.Drawing.Size(298, 20);
+            this.TxtGirisTarih.TabIndex = 30;
             // 
             // Liste
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Liste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Liste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.Liste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Liste.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -222,30 +212,29 @@
             this.Uts,
             this.UTarih,
             this.SKTarihi});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Liste.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Liste.DefaultCellStyle = dataGridViewCellStyle5;
             this.Liste.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Liste.Location = new System.Drawing.Point(0, 0);
             this.Liste.Name = "Liste";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Liste.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Liste.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.Liste.RowHeadersVisible = false;
-            this.Liste.Size = new System.Drawing.Size(1133, 567);
+            this.Liste.Size = new System.Drawing.Size(1193, 572);
             this.Liste.TabIndex = 0;
             this.Liste.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Liste_CellEndEdit);
-            this.Liste.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.Liste_EditingControlShowing);
             // 
             // Id
             // 
@@ -302,62 +291,66 @@
             this.UrunId.Name = "UrunId";
             this.UrunId.Width = 62;
             // 
-            // Uts
+            // PnlUst
             // 
-            this.Uts.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Uts.FalseValue = "False";
-            this.Uts.HeaderText = "Uts";
-            this.Uts.Name = "Uts";
-            this.Uts.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Uts.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Uts.TrueValue = "True";
-            this.Uts.Width = 48;
+            this.PnlUst.BackColor = System.Drawing.Color.SteelBlue;
+            this.PnlUst.Controls.Add(this.label1);
+            this.PnlUst.Controls.Add(this.BtnKapat);
+            this.PnlUst.Controls.Add(this.BtnTemiz);
+            this.PnlUst.Controls.Add(this.BtnTemizle);
+            this.PnlUst.Controls.Add(this.BtnSil);
+            this.PnlUst.Controls.Add(this.BtnKaydet);
+            this.PnlUst.Controls.Add(this.BtnGüncelle);
+            this.PnlUst.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PnlUst.Location = new System.Drawing.Point(0, 0);
+            this.PnlUst.Name = "PnlUst";
+            this.PnlUst.Size = new System.Drawing.Size(1503, 57);
+            this.PnlUst.TabIndex = 2;
             // 
-            // UTarih
+            // label1
             // 
-            this.UTarih.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.UTarih.HeaderText = "Uretim Tarih";
-            this.UTarih.Name = "UTarih";
-            this.UTarih.Width = 82;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(635, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(179, 43);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Urun Giris";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // SKTarihi
+            // SpcUrunGiris
             // 
-            this.SKTarihi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.SKTarihi.HeaderText = "Son Kullanma Tarihi";
-            this.SKTarihi.Name = "SKTarihi";
-            this.SKTarihi.Width = 115;
+            this.SpcUrunGiris.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.SpcUrunGiris.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SpcUrunGiris.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.SpcUrunGiris.Location = new System.Drawing.Point(0, 57);
+            this.SpcUrunGiris.Name = "SpcUrunGiris";
             // 
-            // TxtAciklama
+            // SpcUrunGiris.Panel1
             // 
-            this.TxtAciklama.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TxtAciklama.Location = new System.Drawing.Point(0, 386);
-            this.TxtAciklama.Multiline = true;
-            this.TxtAciklama.Name = "TxtAciklama";
-            this.TxtAciklama.Size = new System.Drawing.Size(298, 129);
-            this.TxtAciklama.TabIndex = 32;
+            this.SpcUrunGiris.Panel1.Controls.Add(this.Liste);
+            this.SpcUrunGiris.Panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             // 
-            // a
+            // SpcUrunGiris.Panel2
             // 
-            this.a.BackColor = System.Drawing.Color.SteelBlue;
-            this.a.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.a.Dock = System.Windows.Forms.DockStyle.Top;
-            this.a.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.a.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.a.Location = new System.Drawing.Point(0, 355);
-            this.a.Name = "a";
-            this.a.Size = new System.Drawing.Size(298, 31);
-            this.a.TabIndex = 31;
-            this.a.Text = "Aciklama";
-            this.a.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // TxtGirisTarih
-            // 
-            this.TxtGirisTarih.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TxtGirisTarih.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.TxtGirisTarih.Location = new System.Drawing.Point(0, 335);
-            this.TxtGirisTarih.Name = "TxtGirisTarih";
-            this.TxtGirisTarih.Size = new System.Drawing.Size(298, 20);
-            this.TxtGirisTarih.TabIndex = 30;
+            this.SpcUrunGiris.Panel2.BackColor = System.Drawing.Color.SteelBlue;
+            this.SpcUrunGiris.Panel2.Controls.Add(this.TxtAciklama);
+            this.SpcUrunGiris.Panel2.Controls.Add(this.a);
+            this.SpcUrunGiris.Panel2.Controls.Add(this.TxtGirisTarih);
+            this.SpcUrunGiris.Panel2.Controls.Add(this.label7);
+            this.SpcUrunGiris.Panel2.Controls.Add(this.TxtFaturaNo);
+            this.SpcUrunGiris.Panel2.Controls.Add(this.label6);
+            this.SpcUrunGiris.Panel2.Controls.Add(this.TxtGirisTuru);
+            this.SpcUrunGiris.Panel2.Controls.Add(this.label5);
+            this.SpcUrunGiris.Panel2.Controls.Add(this.TxtCariAdi);
+            this.SpcUrunGiris.Panel2.Controls.Add(this.label4);
+            this.SpcUrunGiris.Panel2.Controls.Add(this.TxtCariTur);
+            this.SpcUrunGiris.Panel2.Controls.Add(this.label3);
+            this.SpcUrunGiris.Panel2.Controls.Add(this.TxtGirisId);
+            this.SpcUrunGiris.Panel2.Controls.Add(this.label2);
+            this.SpcUrunGiris.Size = new System.Drawing.Size(1503, 576);
+            this.SpcUrunGiris.SplitterDistance = 1197;
+            this.SpcUrunGiris.TabIndex = 3;
             // 
             // label7
             // 
@@ -460,7 +453,6 @@
             this.TxtCariTur.Name = "TxtCariTur";
             this.TxtCariTur.Size = new System.Drawing.Size(298, 21);
             this.TxtCariTur.TabIndex = 22;
-            this.TxtCariTur.SelectedIndexChanged += new System.EventHandler(this.TxtCariTur_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -503,38 +495,49 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1443, 628);
+            this.ClientSize = new System.Drawing.Size(1503, 633);
             this.Controls.Add(this.SpcUrunGiris);
             this.Controls.Add(this.PnlUst);
             this.Name = "UrunGiris";
             this.Text = "UrunGiris";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.UrunGiris_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Liste)).EndInit();
             this.PnlUst.ResumeLayout(false);
             this.SpcUrunGiris.Panel1.ResumeLayout(false);
             this.SpcUrunGiris.Panel2.ResumeLayout(false);
             this.SpcUrunGiris.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SpcUrunGiris)).EndInit();
             this.SpcUrunGiris.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Liste)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel PnlUst;
         private System.Windows.Forms.Button BtnKapat;
+        private System.Windows.Forms.Button BtnTemiz;
         private System.Windows.Forms.Button BtnTemizle;
         private System.Windows.Forms.Button BtnSil;
         private System.Windows.Forms.Button BtnKaydet;
         private System.Windows.Forms.Button BtnGüncelle;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button BtnTemiz;
-        private System.Windows.Forms.SplitContainer SpcUrunGiris;
         private System.Windows.Forms.TextBox TxtAciklama;
         private System.Windows.Forms.Label a;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SKTarihi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UTarih;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Uts;
         private System.Windows.Forms.DateTimePicker TxtGirisTarih;
+        private System.Windows.Forms.DataGridView Liste;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sira;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Barkod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UrunKodu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LotSeri;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GirisAdet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Not;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UrunId;
+        private System.Windows.Forms.Panel PnlUst;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.SplitContainer SpcUrunGiris;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox TxtFaturaNo;
         private System.Windows.Forms.Label label6;
@@ -546,17 +549,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TxtGirisId;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView Liste;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sira;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Barkod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UrunKodu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LotSeri;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GirisAdet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Not;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UrunId;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Uts;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UTarih;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SKTarihi;
     }
 }

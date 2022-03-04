@@ -175,6 +175,7 @@
           <Property Name="CariId" Type="int" />
           <Property Name="GirisTuru" Type="nvarchar" MaxLength="20" />
           <Property Name="FaturaNo" Type="nvarchar" MaxLength="30" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="350" />
           <Property Name="GirisTarih" Type="date" />
           <Property Name="IsDeleted" Type="bit" />
           <Property Name="CreatedDate" Type="date" />
@@ -836,6 +837,7 @@
           <Property Name="CreatedUser" Type="Int32" />
           <Property Name="UpdateDate" Type="DateTime" Precision="0" />
           <Property Name="UpdateUser" Type="Int32" />
+          <Property Name="Aciklama" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="tblUrunKayitAlt">
           <Key>
@@ -1127,6 +1129,7 @@
           <EntitySetMapping Name="tblUrunGirisUst">
             <EntityTypeMapping TypeName="ErpPro102SModel.tblUrunGirisUst">
               <MappingFragment StoreEntitySet="tblUrunGirisUst">
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
                 <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
                 <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
                 <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />

@@ -19,7 +19,9 @@ namespace IEA_ErpProject.UrunGirisIslemleri
     {
         private readonly Formlar f = new Formlar();
         private readonly ErpPro102SEntities _db = new ErpPro102SEntities(); // 1.Aşama
-        
+
+        private readonly Numaralar _n = new Numaralar();
+
         private  string[] MyArray { get; set; }  // MyArray adında bir property tanimladik.
 
 
@@ -30,7 +32,11 @@ namespace IEA_ErpProject.UrunGirisIslemleri
 
         private void UrunGiris_Load(object sender, EventArgs e)
         {
+
+            TxtGirisId.Text = _n.UGirisNo();
             MyArray = _db.tblUrunKayitUst.Select(x => x.UrunKodu).Distinct().ToArray(); //linq
+
+
         }
 
         private void ComboDoldur()
@@ -81,6 +87,52 @@ namespace IEA_ErpProject.UrunGirisIslemleri
             //}
         }
 
+        public void UrunAc(int secimId) // internal aynı projelerin içerisinde gözükebilir farklı bir projede tanımlanamaz
+        {
+            var srg = _db.tblUrunGirisUst.FirstOrDefault(x => x.GirisId == secimId);
+
+            if (srg != null)
+            {
+                TxtGirisId.Text = srg.GirisId.ToString().PadLeft(7,'0');
+                TxtCariTur.Text = srg.CariTip;
+                TxtCariAdi.Text = srg.CariAdi;
+                TxtGirisTuru.Text = srg.GirisTuru;
+                TxtFaturaNo.Text = srg.FaturaNo;
+                TxtGirisTarih.Text = srg.GirisTarih.ToString();
+                TxtAciklama.Text = srg.Aciklama;
+                
+
+            }
+
+            else
+            {
+                MessageBox.Show("Istek sirasinda bir sorun oldu tekrar deneyiniz");
+                return;
+            }
+            
+            Liste.Rows.Clear();
+            Liste.AllowUserToAddRows = false;
+
+            var lst = _db.tblUrunGirisAlt.Where(s => s.GirisId == secimId).ToList();
+
+            for (int i = 0; i < lst.Count; i++)
+            {
+                Liste.Rows.Add();
+                Liste.Rows[i].Cells[1].Value = i + 1;
+                Liste.Rows[i].Cells[0].Value = lst[i].Id;
+                Liste.Rows[i].Cells[2].Value = lst[i].Barkod;
+                Liste.Rows[i].Cells[3].Value = lst[i].UrunKodu;
+                Liste.Rows[i].Cells[4].Value = lst[i].LotSeriNo;
+                Liste.Rows[i].Cells[5].Value = lst[i].GirisAdet;
+                Liste.Rows[i].Cells[6].Value = lst[i].Aciklama;
+                Liste.Rows[i].Cells[7].Value = lst[i].GirisId;
+                Liste.Rows[i].Cells[8].Value = lst[i].UtsDurum;
+                Liste.Rows[i].Cells[9].Value = lst[i].UTarih;
+                Liste.Rows[i].Cells[10].Value = lst[i].SKTarih;
+            }
+
+        }
+
         protected override void OnLoad(EventArgs e)
         {
 
@@ -109,7 +161,14 @@ namespace IEA_ErpProject.UrunGirisIslemleri
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Islem calisiyor.");
+            int id = f.UrunGirisListesiAc(true);
+            if (id > 0)
+            {
+                UrunAc(id);
+
+            }
+
+            AnaSayfa.Aktarma = -1;
         }
 
         private void btn_Click(object sender, EventArgs e)
@@ -329,6 +388,8 @@ namespace IEA_ErpProject.UrunGirisIslemleri
            
             tblUrunGirisAlt[] alts = new tblUrunGirisAlt[Liste.RowCount]; // Burada array oluşturuyoruz çünkü veriler alttan her biri ayrı bir columb halinde bulunduğu için hepsini bir array içine ekleyip oradan çağırıyoruz.
 
+            // Islem trigger a yonlendirildiginden bu kod kapatıldı.
+
             tblStokDurum[] durums = new tblStokDurum[Liste.RowCount];
 
             
@@ -339,6 +400,9 @@ namespace IEA_ErpProject.UrunGirisIslemleri
             for (int i = 0; i < Liste.RowCount; i++)    
             {
 
+
+
+                #region Trigger a yaptırılan StokDurum kaydi bilgileri
                 //if (Convert.ToInt32(Liste.Rows[i].Cells[7].Value)==0) //== 0  durumu bi kayıt yok bi kayit yapmalıyız anlamına gelir. 0 sa yeni kayıt anlamı gelir.
                 //{
                 //    durums[i] = new tblStokDurum();
@@ -368,10 +432,11 @@ namespace IEA_ErpProject.UrunGirisIslemleri
                 //    srg.StokAdet += Convert.ToInt32(Liste.Rows[i].Cells[5].Value);
                 //    srg.RafAdet += Convert.ToInt32(Liste.Rows[i].Cells[5].Value);
 
-                //}
+                //} 
+                #endregion
 
 
-                
+
                 alts[i] = new tblUrunGirisAlt();
                 alts[i].Barkod = Liste.Rows[i].Cells[2].Value.ToString();
                 alts[i].UrunKodu = Liste.Rows[i].Cells[3].Value.ToString();
@@ -396,7 +461,30 @@ namespace IEA_ErpProject.UrunGirisIslemleri
             _db.tblUrunGirisAlt.AddRange(alts);
             _db.SaveChanges();
             MessageBox.Show("Bilgiler Kayit Edildi.");
+            Temizle();
 
+        }
+
+        private void Temizle()
+        {
+            foreach (Control item in SpcUrunGiris.Panel2.Controls)
+            {
+                if (item is TextBox || item is ComboBox || item is DateTimePicker ) // Datetime ın default parametleri içerisinde bugün tanımlı
+                {
+                    item.Text = "";
+                }
+            }
+
+            TxtGirisId.Text = _n.UGirisNo();
+            Liste.Rows.Clear();
+
+
+
+        }
+
+        private void BtnTemizle_Click(object sender, EventArgs e)
+        {
+            Temizle();
         }
     }
 }

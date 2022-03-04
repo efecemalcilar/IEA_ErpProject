@@ -69,24 +69,31 @@ namespace ProjeAtHome.BilgiGiris.Hastaneler
 
         private void Liste_DoubleClick(object sender, EventArgs e)
         {
-            if (Liste.CurrentRow != null) secimId = (int?)
-                Liste.CurrentRow.Cells[1].Value ?? -1;
+            if (Liste.CurrentRow != null)
+                secimId = (int?)
+                    Liste.CurrentRow.Cells[1].Value ?? -1;
 
             if (secimId > 0 && Secim && Application.OpenForms["HastaneGiris"] == null)
             {
                 AnaSayfa1.Aktarma = secimId;
                 Close();
-                f.HastaneGirisAc(secimId);
 
+
+            } // tıkladığımda hangi satır seçiliyse currentRow kullanırız.
+            // Eğer normal bir değer gelirse burdaki değeri al int e cevir , eger null gelirse -1 yaz.
+
+            else if (Secim && Application.OpenForms["HastaneGiris"] != null)
+            {
+                HastaneGiris frm = Application.OpenForms["HastaneGiris"] as HastaneGiris;
+                frm.Ac(secimId);
+                Close();
 
             }
 
 
-            else if (Application.OpenForms["HastaneGiris"] != null)
+            else if (!Secim)
             {
-                HastaneGiris frm = Application.OpenForms["HastaneGiris"] as HastaneGiris;
-
-                frm.Ac(secimId);
+                f.HastaneGirisAc(secimId);
                 Close();
             }
         }
