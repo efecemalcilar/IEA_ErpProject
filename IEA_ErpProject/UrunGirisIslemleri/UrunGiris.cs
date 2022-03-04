@@ -21,6 +21,9 @@ namespace IEA_ErpProject.UrunGirisIslemleri
         private readonly ErpPro102SEntities _db = new ErpPro102SEntities(); // 1.Aşama
 
         private readonly Numaralar _n = new Numaralar();
+        private int girisId = -1;
+
+        private List<tblUrunGirisAlt> altlst = new List<tblUrunGirisAlt>();
 
         private  string[] MyArray { get; set; }  // MyArray adında bir property tanimladik.
 
@@ -87,8 +90,11 @@ namespace IEA_ErpProject.UrunGirisIslemleri
             //}
         }
 
+        
+
         public void UrunAc(int secimId) // internal aynı projelerin içerisinde gözükebilir farklı bir projede tanımlanamaz
         {
+            girisId = secimId;
             var srg = _db.tblUrunGirisUst.FirstOrDefault(x => x.GirisId == secimId);
 
             if (srg != null)
@@ -112,23 +118,25 @@ namespace IEA_ErpProject.UrunGirisIslemleri
             
             Liste.Rows.Clear();
             Liste.AllowUserToAddRows = false;
+            
+            altlst = _db.tblUrunGirisAlt.Where(s => s.GirisId == secimId).ToList();
 
-            var lst = _db.tblUrunGirisAlt.Where(s => s.GirisId == secimId).ToList();
-
-            for (int i = 0; i < lst.Count; i++)
+            for (int i = 0; i < altlst.Count; i++)
             {
                 Liste.Rows.Add();
+
+                Liste.Rows[i].Cells[0].Value = altlst[i].Id;
                 Liste.Rows[i].Cells[1].Value = i + 1;
-                Liste.Rows[i].Cells[0].Value = lst[i].Id;
-                Liste.Rows[i].Cells[2].Value = lst[i].Barkod;
-                Liste.Rows[i].Cells[3].Value = lst[i].UrunKodu;
-                Liste.Rows[i].Cells[4].Value = lst[i].LotSeriNo;
-                Liste.Rows[i].Cells[5].Value = lst[i].GirisAdet;
-                Liste.Rows[i].Cells[6].Value = lst[i].Aciklama;
-                Liste.Rows[i].Cells[7].Value = lst[i].GirisId;
-                Liste.Rows[i].Cells[8].Value = lst[i].UtsDurum;
-                Liste.Rows[i].Cells[9].Value = lst[i].UTarih;
-                Liste.Rows[i].Cells[10].Value = lst[i].SKTarih;
+                Liste.Rows[i].Cells[2].Value = altlst[i].Barkod;
+                Liste.Rows[i].Cells[3].Value = altlst[i].UrunKodu;
+                Liste.Rows[i].Cells[4].Value = altlst[i].LotSeriNo;
+                Liste.Rows[i].Cells[5].Value = altlst[i].GirisAdet;
+                Liste.Rows[i].Cells[6].Value = altlst[i].Aciklama;
+                Liste.Rows[i].Cells[7].Value = altlst[i].GirisId;
+                Liste.Rows[i].Cells[8].Value = altlst[i].UtsDurum;
+                Liste.Rows[i].Cells[9].Value = altlst[i].UTarih;
+                Liste.Rows[i].Cells[10].Value = altlst[i].SKTarih;
+                Liste.Rows[i].Cells[11].Value = false;
             }
 
         }
@@ -485,6 +493,96 @@ namespace IEA_ErpProject.UrunGirisIslemleri
         private void BtnTemizle_Click(object sender, EventArgs e)
         {
             Temizle();
+        }
+
+        private void BtnGüncelle_Click(object sender, EventArgs e)
+        {
+            Guncelle();
+        }
+
+        private void Guncelle()
+        {
+            if (girisId == -1)
+            {
+                MessageBox.Show("Guncelle icim secim yapiniz.");
+                return;
+            }
+
+
+            var srg = _db.tblUrunGirisUst.FirstOrDefault(x => x.GirisId == girisId);
+
+            srg.GirisId = int.Parse(TxtGirisId.Text);
+            srg.CariTip = TxtCariTur.Text;
+            srg.CariAdi = TxtCariAdi.Text;
+            srg.GirisTuru = TxtGirisTuru.Text;
+            srg.FaturaNo = TxtFaturaNo.Text;
+            srg.GirisTarih = TxtGirisTarih.Value;
+            srg.Aciklama = TxtAciklama.Text;
+
+            _db.SaveChanges();
+
+            var lst = (from s in _db.tblUrunGirisAlt where s.GirisId == girisId select s).ToList();
+
+
+            for (int i = 0; i < Liste.RowCount; i++)
+            {
+                if ((bool)Liste.Rows[i].Cells[11].Value ==false)
+                {
+
+                    string newBarkod= Liste.Rows[i].Cells[3].Value.ToString() + "/" +Liste.Rows[i].Cells[4].Value
+                        .ToString();
+
+                    var stk = _db.tblStokDurum.FirstOrDefault(s => s.Barkod == Liste.Rows[i].Cells[4].Value.ToString());
+
+                    stk.Barkod = newBarkod;
+                    stk.UrunKodu= Liste.Rows[i].Cells[3].ToString();
+                    stk.LotSeriNo= Liste.Rows[i].Cells[4].ToString();
+                    var adet = altlst[i].GirisAdet-Convert.ToInt32(Liste.Rows[i].Cells[5].Value);
+
+                    // Eski kayıt : 100 yeni kayit : 80 = +20 
+                    // Eski 100 yeni 120 = -20
+                    stk.StokAdet -= adet;
+                    stk.RafAdet -= adet;
+
+                    _db.SaveChanges();
+
+
+                    lst[i].Barkod = Liste.Rows[i].Cells[2].Value.ToString();
+                    lst[i].UrunKodu = Liste.Rows[i].Cells[3].ToString();
+                    lst[i].LotSeriNo = Liste.Rows[i].Cells[4].ToString();
+                    lst[i].GirisAdet = Convert.ToInt32(Liste.Rows[i].Cells[5].Value);
+                    lst[i].Aciklama = Liste.Rows[i].Cells[6].Value.ToString();
+                    lst[i].GirisTarih = TxtGirisTarih.Value;
+                    lst[i].BransNo = "";
+                    lst[i].UtsDurum = Convert.ToBoolean(Liste.Rows[i].Cells[8].Value);
+                    lst[i].UTarih = Convert.ToDateTime(Liste.Rows[i].Cells[9].Value);
+                    lst[i].SKTarih = Convert.ToDateTime(Liste.Rows[i].Cells[10].Value);
+                    
+
+                    _db.SaveChanges();
+
+
+                }
+
+                else
+                {
+                    
+                }
+
+            }
+
+        }
+
+        private void BtnAddListeRow1_Click(object sender, EventArgs e)
+        {
+            Liste.AllowUserToAddRows = Liste.AllowUserToAddRows != true;
+
+
+            if (Liste.AllowUserToAddRows == true)
+            {
+                var srg = Liste.RowCount;
+                if (Liste.CurrentRow != null) Liste.CurrentRow.Cells[11].Value = true;
+            }
         }
     }
 }
