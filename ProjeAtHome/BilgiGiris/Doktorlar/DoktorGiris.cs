@@ -171,20 +171,20 @@ namespace ProjeAtHome.BilgiGiris.Doktorlar
             }
         }
         
-        protected override void Onload(EventArgs e)
+             protected override void OnLoad(EventArgs e)
         {
-            var btn = new Button();             // Burada button u sanal olarak oluşturacaz.
-            btn.Size = new Size(25, TxtDoktorBul.ClientSize.Height + 0);            // Size(Genişlik,Yükseklik) normal bir height kadar al
-            btn.Location = new Point(TxtDoktorBul.ClientSize.Width - btn.Width - 1);
-            btn.Cursor = Cursors.Default;
-            btn.BackgroundImage = Resources.Ara32x32;
-            btn.BackgroundImageLayout = ImageLayout.Stretch;
-            btn.Anchor = (AnchorStyles.Top | AnchorStyles.Right);
-            TxtDoktorBul.Controls.Add(btn);
-            base.OnLoad(e);
-
-            // Kodsal olarak Click eventini oluşturmak
-            btn.Click += Btn_Click;
+              var btn = new Button();             // Burada button u sanal olarak oluşturacaz.
+              btn.Size = new Size(25, TxtDoktorBul.ClientSize.Height + 0);            // Size(Genişlik,Yükseklik) normal bir height kadar al
+              btn.Location = new Point(TxtDoktorBul.ClientSize.Width - btn.Width - 1);
+              btn.Cursor = Cursors.Default;
+              btn.BackgroundImage = Resources.Ara32x32;
+              btn.BackgroundImageLayout = ImageLayout.Stretch;
+              btn.Anchor = (AnchorStyles.Top | AnchorStyles.Right);
+              TxtDoktorBul.Controls.Add(btn);
+              base.OnLoad(e);
+              
+              // Kodsal olarak Click eventini oluşturmak
+              btn.Click += Btn_Click;
 
         }
 
