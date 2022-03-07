@@ -35,6 +35,7 @@
             this.pnlSol = new System.Windows.Forms.Panel();
             this.scMenu = new System.Windows.Forms.SplitContainer();
             this.tvMenu = new System.Windows.Forms.TreeView();
+            this.BtnStokIslemleri = new System.Windows.Forms.Button();
             this.btnUrunGiris = new System.Windows.Forms.Button();
             this.btnBilgiGiris = new System.Windows.Forms.Button();
             this.pnlsolUst = new System.Windows.Forms.Panel();
@@ -43,8 +44,9 @@
             this.btnSolUstAra = new System.Windows.Forms.Button();
             this.txtSolUstAra = new System.Windows.Forms.TextBox();
             this.splitter2 = new System.Windows.Forms.Splitter();
-            this.BtnStokIslemleri = new System.Windows.Forms.Button();
+            this.BtnKapat = new System.Windows.Forms.Button();
             this.tabPGenel.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.pnlSol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMenu)).BeginInit();
             this.scMenu.Panel1.SuspendLayout();
@@ -67,6 +69,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tabPage1.Controls.Add(this.BtnKapat);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -136,6 +139,16 @@
             this.tvMenu.Size = new System.Drawing.Size(470, 263);
             this.tvMenu.TabIndex = 0;
             this.tvMenu.DoubleClick += new System.EventHandler(this.tvMenu_DoubleClick);
+            // 
+            // BtnStokIslemleri
+            // 
+            this.BtnStokIslemleri.Location = new System.Drawing.Point(199, 3);
+            this.BtnStokIslemleri.Name = "BtnStokIslemleri";
+            this.BtnStokIslemleri.Size = new System.Drawing.Size(75, 52);
+            this.BtnStokIslemleri.TabIndex = 2;
+            this.BtnStokIslemleri.Text = "Stok Durum";
+            this.BtnStokIslemleri.UseVisualStyleBackColor = true;
+            this.BtnStokIslemleri.Click += new System.EventHandler(this.BtnStokIslemleri_Click);
             // 
             // btnUrunGiris
             // 
@@ -223,15 +236,17 @@
             this.splitter2.TabIndex = 3;
             this.splitter2.TabStop = false;
             // 
-            // BtnStokIslemleri
+            // BtnKapat
             // 
-            this.BtnStokIslemleri.Location = new System.Drawing.Point(199, 3);
-            this.BtnStokIslemleri.Name = "BtnStokIslemleri";
-            this.BtnStokIslemleri.Size = new System.Drawing.Size(75, 52);
-            this.BtnStokIslemleri.TabIndex = 2;
-            this.BtnStokIslemleri.Text = "Stok Durum";
-            this.BtnStokIslemleri.UseVisualStyleBackColor = true;
-            this.BtnStokIslemleri.Click += new System.EventHandler(this.BtnStokIslemleri_Click);
+            this.BtnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnKapat.BackgroundImage = global::IEA_ErpProject.Properties.Resources.exit_64;
+            this.BtnKapat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnKapat.Location = new System.Drawing.Point(1384, 6);
+            this.BtnKapat.Name = "BtnKapat";
+            this.BtnKapat.Size = new System.Drawing.Size(49, 43);
+            this.BtnKapat.TabIndex = 5;
+            this.BtnKapat.UseVisualStyleBackColor = true;
+            this.BtnKapat.Click += new System.EventHandler(this.BtnKapat_Click);
             // 
             // AnaSayfa
             // 
@@ -247,8 +262,10 @@
             this.Name = "AnaSayfa";
             this.Text = "Ana Sayfa";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AnaSayfa_FormClosing);
             this.Load += new System.EventHandler(this.AnaSayfa_Load);
             this.tabPGenel.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.pnlSol.ResumeLayout(false);
             this.scMenu.Panel1.ResumeLayout(false);
             this.scMenu.Panel2.ResumeLayout(false);
@@ -278,6 +295,7 @@
         private System.Windows.Forms.Button btnBilgiGiris;
         private System.Windows.Forms.Button btnUrunGiris;
         private System.Windows.Forms.Button BtnStokIslemleri;
+        private System.Windows.Forms.Button BtnKapat;
     }
 }
 

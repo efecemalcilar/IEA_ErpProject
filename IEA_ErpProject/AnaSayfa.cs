@@ -14,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IEA_ErpProject.Giris;
 using IEA_ErpProject.Stok;
 
 namespace IEA_ErpProject
@@ -260,8 +261,42 @@ namespace IEA_ErpProject
         {
             lblMenu.Text = btnBilgiGiris.Text;            // Bilgi giriş'e tıkladigimizda Yukarıda Bilgi giriş yazısı gelir.
             MenuOlustur("bilgi");                                 // MenuOlustur() yapıp ampule tıklayınca kendi otomatik method oluşturdu                         
-        } 
+        }
         #endregion
 
+
+        
+
+        private void AnaSayfa_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Programdan cikis yapmak istediginize emin misiniz ?", "Cikis Islemi",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.ExitThread();
+            }
+            else
+            {
+                e.Cancel = true;
+
+            }
+        }
+
+        private void BtnKapat_Click(object sender, EventArgs e)
+        {
+            Cikis();
+        }
+
+        private void Cikis()
+        {
+            DialogResult dialogResult = MessageBox.Show("Programdan cikis yapmak istediginize emin misiniz ?", "Cikis Islemi",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.ExitThread();
+            }
+        }
     }
 }
