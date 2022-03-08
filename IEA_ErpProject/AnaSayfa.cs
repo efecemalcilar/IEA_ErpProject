@@ -272,15 +272,15 @@ namespace IEA_ErpProject
             DialogResult dialogResult = MessageBox.Show("Programdan cikis yapmak istediginize emin misiniz ?", "Cikis Islemi",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            if (dialogResult == DialogResult.Yes)
-            {
-                Application.ExitThread();
-            }
-            else
-            {
-                e.Cancel = true;
+            if (dialogResult == DialogResult.Yes) Application.ExitThread();
 
-            }
+
+
+            else e.Cancel = true;
+            
+
+
+            
         }
 
         private void BtnKapat_Click(object sender, EventArgs e)
@@ -297,6 +297,11 @@ namespace IEA_ErpProject
             {
                 Application.ExitThread();
             }
+        }
+
+        private void btnSolUstCollapse_Click(object sender, EventArgs e)
+        {
+            pnlSol.Width = pnlSol.Width > 120 ? 90 : 289;
         }
     }
 }

@@ -18,9 +18,8 @@ namespace IEA_ErpProject.Entity.Code
 
         public DbSet<tblUser> TblUsers { get; set; }  //DBset databse de ki karşılaştırmamızı yapacak
 
+        public DbSet<tblKonsinyeGonderim> TblKonsinyeGonderimler { get; set; } //Bu kod Declare işlemi yapıyor, amac db deki tblkonsinyegonderi class olarak kullanmaya yarıyor.
 
        
-
-
     }
 }

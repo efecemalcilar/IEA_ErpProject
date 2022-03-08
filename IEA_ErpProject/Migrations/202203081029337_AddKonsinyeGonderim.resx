@@ -117,44 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Save-icon64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\Save-icon64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Target" xml:space="preserve">
+    <value>H4sIAAAAAAAEAO1Z2W7bRhR9L9B/IPjUAo5o2QjQGlQCRbYDI/GCUM5rMSKv5GmGQ3Zm6Ejf1od+Un+hd7gvo4W0EhRFYcCQZjl3mTuXh0d///mX+3YdMusZhKQRn9jj0altAfejgPLVxE7U8tUv9ts3P/7gXgXh2vpcrDvX63AnlxP7San4wnGk/wQhkaOQ+iKS0VKN/Ch0SBA5Z6envzrjsQMIYSOWZbmfEq5oCOkX/DqLuA+xSgi7jQJgMh/HGS9Fte5ICDImPkzsm6vpb1cifhDR7+Cr0RUCqc1ohvtsa8ooQY88YEvbIpxHiij09+JRgqdExFdejAOEzTcx4LolYRLyOC6q5YeGdHqmQ3KqjQWUn0gVhT0Bx+d5jpz29kGZtsscYhazJOmo00xObLVgHyIuKd/A+4gHIGhoW227FzMm9J5dOR8ZkE6s5vqTsm6wvPTfiTVLmEoETDgkShB2Yj0kC0b9D7CZR1+AT3jCWD0CjAHnGgM4hPgxCLX5BMs8rpvAtpzmPqe9sdxW25OHydX5mW3doXGyYFAWSC0lnooEvAcOgigIHohSILjGgDQnHestWzMi6DwRhUEsSrxntnVL1h+Br9QT3sDXtnVN1xAUA7kPj5zirdRHJxI4xMw0oDvMYKUcyU6VPoMZ/HgEM0VhzdHcU2HtEg9gjj3EcF670aY+/cJISHZl5/UxsvMoEr6/uPY4G4B6GQKVl8AAi7WAeRdFDAjvDTQToGsee6l4mUc5kD7AFx/mYxwcx6kcaIBTrlO1131NN/NzaKPVu/9vrltt6f87LvWBd7pn3TwQKb9GYlcTHH8Tw7oY9kR8DMO7qxuJmyIUDyx3KqtLPQprZSh0dDqvdZlbb8aYoXqgcrx5l10wfYMqnzK2Z6IhnQQawHUSpRkuu6qmVJRBVzTVyXhqwWedLYTWvSVxjKdUI7j5iOVl7Hb2yutP98IMw/GlgfWV3paW8JaRFbRm0TR6ek2FVNj3yILoQpgFYWdZ84i3ZLiwtfMU2x2nOoViu/6c95FeDLQNXeX5GkMPsZ2kWYDSXzMj7qCkLySEEWHocrOIJSHf1il37S5JYR2iHOyHk7K+Nk462A+nHVExdjhKi7TVwVpTh2NW1K0OV40ejlRwszpOMdbDn5SdNXxJRw5HqLGzOkxtuMe51Qla4/DqE73xMkpkwMsmeuS8ztUaia9P9Mbr+teY6OK5TqsZtBuR0+lELdbT7nOHdsHscXO8vpdmbFCvM+/8Nv0tYyn1/dnI4QgVyaqjVKM9aqZkTY2CKUe/c7V0KEV7SWm9pBYtCuHmj/P9wlnn+Z4tsS1M0TMN9LPd20gF4UgvGHl/sBmjGG+14JZwugSpstcI++x0fNbS3P49+pcjZcD6i2Df/bWI6gTvffHp+4bdlJn4MxH+ExEdoamCHaAqGVFTXak/bJWPAvWnkKx/7gtlFIr0s0AdQygyB/y6d8BNXSgtgBeoQkP2dzShBe0PYtCDhvhiUIMGn5hBDRrikkELOtCl3lrQf6Pf1HUI4y1pXpJBwoq5ifXHbesmw3D7ySLdV+vdyoRRzThM88ge6liwiwgjzJvSFhVljz5SiiDb5ZEt1nJZZaB40mU0rlP/wdC9BElXFYT++ZAjO0aqUIEWa274MioqAEOre1QsaRXILSiC151MhaJL4iuc9kHKVFz7TFiiZa5wAcENv09UnKiplBAuWEOedJ3d9lOFqOmzex/rb/IYIaCbVHese/4uoSwo/b42FPIWCF2yeYdArzylO8VqUyLdRfxAoDx9lxAD1/1lDmHMEEzec488wxDfsLw+wor4m4KYbgfZfxDNtLuXlKwECWWOUe3XP4I7+lfwN/8AW0v0rTcfAAA=</value>
   </data>
-  <data name="plusicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\plusicon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Update32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\Update32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="clean" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\clean.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="8mart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\8mart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="RightLeft2Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\RightLeft2Red.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="modern-laser-printer-icon-digital-green-modern-laser-printer-icon-digital-green-any-design-isolated-white-vector-115768523" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\modern-laser-printer-icon-digital-green-modern-laser-printer-icon-digital-green-any-design-isolated-white-vector-115768523.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="exit-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\exit-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cop24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\cop24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="800px_COLOURBOX5590477" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\800px_COLOURBOX5590477.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="printer-icon-print-documents-technology-sign-vector-10490957" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\printer-icon-print-documents-technology-sign-vector-10490957.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Ara32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\Ara32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\images.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>

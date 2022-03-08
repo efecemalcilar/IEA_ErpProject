@@ -30,7 +30,7 @@ namespace IEA_ErpProject.Giris
             if (TxtKullaniciAdi.Text !="" && TxtSifre.Text != "")
             {
                 var srg = code.TblUsers
-                    .FirstOrDefault(s => s.UserName == TxtKullaniciAdi.Text && s.Password == TxtSifre.Text).Id;
+                    .FirstOrDefault(s => s.UserName == TxtKullaniciAdi.Text && s.Password == TxtSifre.Text);
                
                 //var srg1 = (from s in code.TblUsers where (s.UserName == TxtKullaniciAdi.Text && s.Password == TxtSifre.Text) select s.Id).FirstOrDefault();
 
@@ -38,6 +38,8 @@ namespace IEA_ErpProject.Giris
                 {
                     AnaSayfa ana = new AnaSayfa();
                     ana.Show();
+                    ana.LblUserName.Text = srg.Name;
+                    ana.LblUserNickName.Text = srg.UserName;
                     Hide();
                 }
 
@@ -46,6 +48,11 @@ namespace IEA_ErpProject.Giris
                     MessageBox.Show("Kullanici adi veya sifre hatali,lutfen kontrol edin");
                 }
             }
+        }
+
+        private void btnCikis_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

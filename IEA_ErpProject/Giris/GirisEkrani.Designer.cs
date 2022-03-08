@@ -33,6 +33,7 @@
             this.TxtSifre = new System.Windows.Forms.TextBox();
             this.TxtKullaniciAdi = new System.Windows.Forms.TextBox();
             this.BtnGiris = new System.Windows.Forms.Button();
+            this.btnCikis = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label3
@@ -41,7 +42,7 @@
             this.label3.Location = new System.Drawing.Point(30, 104);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 20);
-            this.label3.TabIndex = 4;
+            this.label3.TabIndex = 5;
             this.label3.Text = "Sifre";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -61,7 +62,7 @@
             this.TxtSifre.Name = "TxtSifre";
             this.TxtSifre.PasswordChar = '*';
             this.TxtSifre.Size = new System.Drawing.Size(354, 20);
-            this.TxtSifre.TabIndex = 2;
+            this.TxtSifre.TabIndex = 1;
             // 
             // TxtKullaniciAdi
             // 
@@ -69,25 +70,42 @@
             this.TxtKullaniciAdi.Location = new System.Drawing.Point(124, 54);
             this.TxtKullaniciAdi.Name = "TxtKullaniciAdi";
             this.TxtKullaniciAdi.Size = new System.Drawing.Size(357, 20);
-            this.TxtKullaniciAdi.TabIndex = 3;
+            this.TxtKullaniciAdi.TabIndex = 0;
             // 
             // BtnGiris
             // 
             this.BtnGiris.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnGiris.BackgroundImage = global::IEA_ErpProject.Properties.Resources.clean;
+            this.BtnGiris.BackgroundImage = global::IEA_ErpProject.Properties.Resources.images;
             this.BtnGiris.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnGiris.Location = new System.Drawing.Point(432, 184);
+            this.BtnGiris.Location = new System.Drawing.Point(402, 170);
             this.BtnGiris.Name = "BtnGiris";
-            this.BtnGiris.Size = new System.Drawing.Size(49, 43);
-            this.BtnGiris.TabIndex = 11;
+            this.BtnGiris.Size = new System.Drawing.Size(79, 69);
+            this.BtnGiris.TabIndex = 2;
             this.BtnGiris.UseVisualStyleBackColor = true;
             this.BtnGiris.Click += new System.EventHandler(this.BtnGiris_Click);
             // 
+            // btnCikis
+            // 
+            this.btnCikis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCikis.BackgroundImage = global::IEA_ErpProject.Properties.Resources.exit_64;
+            this.btnCikis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCikis.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCikis.Location = new System.Drawing.Point(12, 173);
+            this.btnCikis.Name = "btnCikis";
+            this.btnCikis.Size = new System.Drawing.Size(73, 66);
+            this.btnCikis.TabIndex = 3;
+            this.btnCikis.UseVisualStyleBackColor = true;
+            this.btnCikis.Click += new System.EventHandler(this.btnCikis_Click);
+            // 
             // GirisEkrani
             // 
+            this.AcceptButton = this.BtnGiris;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnCikis;
             this.ClientSize = new System.Drawing.Size(507, 260);
+            this.Controls.Add(this.btnCikis);
             this.Controls.Add(this.BtnGiris);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -108,5 +126,6 @@
         private System.Windows.Forms.TextBox TxtSifre;
         private System.Windows.Forms.TextBox TxtKullaniciAdi;
         private System.Windows.Forms.Button BtnGiris;
+        private System.Windows.Forms.Button btnCikis;
     }
 }
