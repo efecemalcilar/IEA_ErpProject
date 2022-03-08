@@ -120,6 +120,11 @@ namespace ProjeAtHome.Fonksiyonlar
             return AnaSayfa1.Aktarma;
         }
 
+        internal int UrunKayitListesiAc(bool v)
+        {
+            throw new NotImplementedException();
+        }
+
         internal void PersonelGirisAc(int id)
         {
             HastaneGiris prs = new HastaneGiris();
