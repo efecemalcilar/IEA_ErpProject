@@ -9,11 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using IEA_ErpProject.BilgiGiris.Personeller;
 using IEA_ErpProject.BilgiGiris.Urunler;
+using IEA_ErpProject.Entity;
+using IEA_ErpProject.Entity.Code;
 using IEA_ErpProject.UrunGirisIslemleri;
 using IEA_ErpProject.Stok;
+using IEA_ErpProject.KonsinyeIslemleri.Giris;
 
 namespace IEA_ErpProject.Fonksiyonlar
 {
+
+
     public class Formlar
     {
         
@@ -187,5 +192,24 @@ namespace IEA_ErpProject.Fonksiyonlar
             }
             return AnaSayfa.Aktarma;
         }
+
+        public int KonsinyeGonderimAc(bool secim = false)
+        {
+
+            KonsinyeGonderim frm = new KonsinyeGonderim(new ErpProContext(),new ErpPro102SEntities());
+            if (secim)
+            {
+                frm.Secim = true;
+                frm.ShowDialog();
+            }
+
+            else
+            {
+                frm.MdiParent = Form.ActiveForm;
+                frm.Show();
+            }
+            return AnaSayfa.Aktarma;
+        }
+
     }
 }

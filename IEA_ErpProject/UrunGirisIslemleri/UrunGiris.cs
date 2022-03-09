@@ -240,9 +240,9 @@ namespace IEA_ErpProject.UrunGirisIslemleri
             Close();
         }
 
-        private void Liste_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        private void Liste_EditingControlShowing(object sender,    DataGridViewEditingControlShowingEventArgs e)
         {
-            try
+            try                // SOR ULAN BURAYI ************************************* BURASI YAZMAYA BAŞLAYINCA AR YI GETİRİYOR.
             {
                 //TextBox txt = e.Control as TextBox; // amacım daagridview in kontrollerine ulaşıp textbox özelliklerini çalıştırmak.
                 if (Liste.CurrentCell.ColumnIndex==3 && e.Control is TextBox txt) //UrunId 3. Indexde yer alıyor.
@@ -523,6 +523,7 @@ namespace IEA_ErpProject.UrunGirisIslemleri
 
             var lst = (from s in _db.tblUrunGirisAlt where s.GirisId == girisId select s).ToList();
 
+           
 
             for (int i = 0; i < Liste.RowCount; i++)
             {
@@ -534,9 +535,9 @@ namespace IEA_ErpProject.UrunGirisIslemleri
 
                     var stk = _db.tblStokDurum.FirstOrDefault(s => s.Barkod == Liste.Rows[i].Cells[4].Value.ToString());
 
-                    stk.Barkod = newBarkod;
-                    stk.UrunKodu= Liste.Rows[i].Cells[3].ToString();
-                    stk.LotSeriNo= Liste.Rows[i].Cells[4].ToString();
+                    //stk.Barkod = newBarkod;
+                    //stk.UrunKodu= Liste.Rows[i].Cells[3].ToString();  
+                    //stk.LotSeriNo= Liste.Rows[i].Cells[4].ToString();
                     var adet = altlst[i].GirisAdet-Convert.ToInt32(Liste.Rows[i].Cells[5].Value);
 
                     // Eski kayıt : 100 yeni kayit : 80 = +20 
@@ -544,7 +545,7 @@ namespace IEA_ErpProject.UrunGirisIslemleri
                     stk.StokAdet -= adet;
                     stk.RafAdet -= adet;
 
-                    _db.SaveChanges();
+                    
 
 
                     lst[i].Barkod = Liste.Rows[i].Cells[2].Value.ToString();
@@ -559,18 +560,39 @@ namespace IEA_ErpProject.UrunGirisIslemleri
                     lst[i].SKTarih = Convert.ToDateTime(Liste.Rows[i].Cells[10].Value);
                     
 
-                    _db.SaveChanges();
+                    
 
 
                 }
 
                 else
                 {
-                    
+                    lst.Add(null);
+                    lst[i] = new tblUrunGirisAlt();
+                    lst[i].GirisId = Convert.ToInt32(TxtGirisId);
+                    lst[i].Barkod = Liste.Rows[i].Cells[2].Value.ToString();
+                    lst[i].UrunKodu = Liste.Rows[i].Cells[3].Value.ToString();
+                    lst[i].LotSeriNo = Liste.Rows[i].Cells[4].Value.ToString();
+                    lst[i].GirisAdet = Convert.ToInt32( Liste.Rows[i].Cells[5].Value.ToString());
+                    lst[i].Aciklama = Liste.Rows[i].Cells[6].Value.ToString();
+                    lst[i].GirisTarih = TxtGirisTarih.Value;
+                    lst[i].BransNo = "";
+                    lst[i].UtsDurum = Convert.ToBoolean(Liste.Rows[i].Cells[8].Value);
+                    lst[i].UTarih = Convert.ToDateTime(Liste.Rows[i].Cells[9].Value);
+                    lst[i].SKTarih = Convert.ToDateTime(Liste.Rows[i].Cells[10].Value);
+
+                    _db.tblUrunGirisAlt.Add(lst[i]);
+
+
+
+
+
+
                 }
 
             }
 
+            _db.SaveChanges();
         }
 
         private void BtnAddListeRow1_Click(object sender, EventArgs e)
