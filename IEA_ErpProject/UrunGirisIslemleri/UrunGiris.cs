@@ -242,7 +242,7 @@ namespace IEA_ErpProject.UrunGirisIslemleri
 
         private void Liste_EditingControlShowing(object sender,    DataGridViewEditingControlShowingEventArgs e)
         {
-            try                // SOR ULAN BURAYI *************************************
+            try                // SOR ULAN BURAYI ************************************* BURASI YAZMAYA BAŞLAYINCA AR YI GETİRİYOR.
             {
                 //TextBox txt = e.Control as TextBox; // amacım daagridview in kontrollerine ulaşıp textbox özelliklerini çalıştırmak.
                 if (Liste.CurrentCell.ColumnIndex==3 && e.Control is TextBox txt) //UrunId 3. Indexde yer alıyor.

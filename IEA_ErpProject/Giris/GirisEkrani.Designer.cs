@@ -63,6 +63,7 @@
             this.TxtSifre.PasswordChar = '*';
             this.TxtSifre.Size = new System.Drawing.Size(354, 20);
             this.TxtSifre.TabIndex = 1;
+            this.TxtSifre.Text = "12345";
             // 
             // TxtKullaniciAdi
             // 
@@ -71,6 +72,7 @@
             this.TxtKullaniciAdi.Name = "TxtKullaniciAdi";
             this.TxtKullaniciAdi.Size = new System.Drawing.Size(357, 20);
             this.TxtKullaniciAdi.TabIndex = 0;
+            this.TxtKullaniciAdi.Text = "ilhanity";
             // 
             // BtnGiris
             // 

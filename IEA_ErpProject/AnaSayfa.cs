@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using IEA_ErpProject.Giris;
 using IEA_ErpProject.Stok;
+using IEA_ErpProject.KonsinyeIslemleri.Giris;
 
 namespace IEA_ErpProject
 {
@@ -67,7 +68,7 @@ namespace IEA_ErpProject
                 tvMenu.Nodes[4].Nodes.Add("Urun Kayit Listesi");
                 tvMenu.Nodes[4].Nodes.Add("Urun Kayit");
 
-
+                
 
             }
             else if (info=="urun")
@@ -84,6 +85,17 @@ namespace IEA_ErpProject
                 tvMenu.Nodes[0].Nodes.Add("Stok Durum");
                 //tvMenu.Nodes[0].Nodes.Add("Urun Giris");
 
+            }
+            
+            else if (info == "Konsinye")
+            {
+                tvMenu.Nodes.Add("Konsinye");
+                tvMenu.Nodes[0].Nodes.Add("Gonderim"); //child
+                tvMenu.Nodes[0].Nodes[0].Nodes.Add("Konsinye Gonderim");
+                tvMenu.Nodes[0].Nodes[0].Nodes.Add("Konsinye Gonderim Listesi");
+                tvMenu.Nodes[0].Nodes.Add("Cikis"); // child
+                tvMenu.Nodes[0].Nodes[1].Nodes.Add("Konsinye Cikis");
+                tvMenu.Nodes[0].Nodes[1].Nodes.Add("Konsinye Cikis Listesi");
             }
 
         }
@@ -235,9 +247,19 @@ namespace IEA_ErpProject
 
                 f.StokDurumAc();
             }
-           
-            
-            
+
+
+
+            #endregion
+
+
+            #region KonsinyeGiris
+            if (isimb == "Konsinye Gonderim" && Application.OpenForms["KonsinyeGonderim"] as KonsinyeGonderim == null)
+            {
+
+
+                f.KonsinyeGonderimAc();
+            } 
             #endregion
 
         }
@@ -262,10 +284,17 @@ namespace IEA_ErpProject
             lblMenu.Text = btnBilgiGiris.Text;            // Bilgi giriş'e tıkladigimizda Yukarıda Bilgi giriş yazısı gelir.
             MenuOlustur("bilgi");                                 // MenuOlustur() yapıp ampule tıklayınca kendi otomatik method oluşturdu                         
         }
+
+
+        private void BtnKonsinye_Click(object sender, EventArgs e)
+        {
+            lblMenu.Text = BtnKonsinye.Text;
+            MenuOlustur("Konsinye");
+        }
         #endregion
 
 
-        
+
 
         private void AnaSayfa_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -303,5 +332,7 @@ namespace IEA_ErpProject
         {
             pnlSol.Width = pnlSol.Width > 120 ? 90 : 289;
         }
+
+        
     }
 }
