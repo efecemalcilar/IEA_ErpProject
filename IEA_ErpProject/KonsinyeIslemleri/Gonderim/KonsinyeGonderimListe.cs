@@ -46,7 +46,7 @@ namespace IEA_ErpProject.KonsinyeIslemleri.Giris
                     
             //    }).Distinct().ToList();
 
-            var srg1 = (from s in _code.TblKonsinyeGonderimler where s.isDeleted!= true where s.CariAdi.Contains(TxtGirisAra.Text) select s).GroupBy(s => new { s.GonderimId }).Select(group => group.FirstOrDefault()).ToList();     // GonderimId ye göre gruplandırma yapıp grupları tekilleştiriyor(Firstorder) ardından listeye ceviriyor.
+            var srg1 = (from s in _code.TblKonsinyeGonderimler where s.isDeleted!= true where s.CariAdi.Contains(TxtGirisAra.Text) select s).GroupBy(s => new { s.GonderimId }).Select(group => group.FirstOrDefault()).ToList();     // GonderimId ye göre gruplandırma yapıp grupları tekilleştiriyor(Firstorder) ardından listeye ceviriyor. ?
             foreach (var s in srg1)
             {
                 Liste.Rows.Add();
