@@ -14,7 +14,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IEA_ErpProject.Giris;
 using IEA_ErpProject.Stok;
+using IEA_ErpProject.KonsinyeIslemleri.Giris;
 
 namespace IEA_ErpProject
 {
@@ -66,7 +68,7 @@ namespace IEA_ErpProject
                 tvMenu.Nodes[4].Nodes.Add("Urun Kayit Listesi");
                 tvMenu.Nodes[4].Nodes.Add("Urun Kayit");
 
-
+                
 
             }
             else if (info=="urun")
@@ -83,6 +85,17 @@ namespace IEA_ErpProject
                 tvMenu.Nodes[0].Nodes.Add("Stok Durum");
                 //tvMenu.Nodes[0].Nodes.Add("Urun Giris");
 
+            }
+            
+            else if (info == "Konsinye")
+            {
+                tvMenu.Nodes.Add("Konsinye");
+                tvMenu.Nodes[0].Nodes.Add("Gonderim"); //child
+                tvMenu.Nodes[0].Nodes[0].Nodes.Add("Konsinye Gonderim");
+                tvMenu.Nodes[0].Nodes[0].Nodes.Add("Konsinye Gonderim Listesi");
+                tvMenu.Nodes[0].Nodes.Add("Cikis"); // child
+                tvMenu.Nodes[0].Nodes[1].Nodes.Add("Konsinye Cikis");
+                tvMenu.Nodes[0].Nodes[1].Nodes.Add("Konsinye Cikis Listesi");
             }
 
         }
@@ -234,9 +247,19 @@ namespace IEA_ErpProject
 
                 f.StokDurumAc();
             }
-           
-            
-            
+
+
+
+            #endregion
+
+
+            #region KonsinyeGiris
+            if (isimb == "Konsinye Gonderim" && Application.OpenForms["KonsinyeGonderim"] as KonsinyeGonderim == null)
+            {
+
+
+                f.KonsinyeGonderimAc();
+            } 
             #endregion
 
         }
@@ -260,8 +283,56 @@ namespace IEA_ErpProject
         {
             lblMenu.Text = btnBilgiGiris.Text;            // Bilgi giriş'e tıkladigimizda Yukarıda Bilgi giriş yazısı gelir.
             MenuOlustur("bilgi");                                 // MenuOlustur() yapıp ampule tıklayınca kendi otomatik method oluşturdu                         
-        } 
+        }
+
+
+        private void BtnKonsinye_Click(object sender, EventArgs e)
+        {
+            lblMenu.Text = BtnKonsinye.Text;
+            MenuOlustur("Konsinye");
+        }
         #endregion
 
+
+
+
+        private void AnaSayfa_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Programdan cikis yapmak istediginize emin misiniz ?", "Cikis Islemi",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (dialogResult == DialogResult.Yes) Application.ExitThread();
+
+
+
+            else e.Cancel = true;
+            
+
+
+            
+        }
+
+        private void BtnKapat_Click(object sender, EventArgs e)
+        {
+            Cikis();
+        }
+
+        private void Cikis()
+        {
+            DialogResult dialogResult = MessageBox.Show("Programdan cikis yapmak istediginize emin misiniz ?", "Cikis Islemi",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.ExitThread();
+            }
+        }
+
+        private void btnSolUstCollapse_Click(object sender, EventArgs e)
+        {
+            pnlSol.Width = pnlSol.Width > 120 ? 90 : 289;
+        }
+
+        
     }
 }

@@ -4,16 +4,22 @@ using IEA_ErpProject.BilgiGiris.Hastaneler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using IEA_ErpProject.BilgiGiris.Personeller;
 using IEA_ErpProject.BilgiGiris.Urunler;
+using IEA_ErpProject.Entity;
+using IEA_ErpProject.Entity.Code;
 using IEA_ErpProject.UrunGirisIslemleri;
 using IEA_ErpProject.Stok;
+using IEA_ErpProject.KonsinyeIslemleri.Giris;
 
 namespace IEA_ErpProject.Fonksiyonlar
 {
+
+
     public class Formlar
     {
         
@@ -185,6 +191,46 @@ namespace IEA_ErpProject.Fonksiyonlar
                 frm.MdiParent = Form.ActiveForm;
                 frm.Show();
             }
+            return AnaSayfa.Aktarma;
+        }
+
+        public int KonsinyeGonderimAc(bool secim = false)
+        {
+
+            KonsinyeGonderim frm = new KonsinyeGonderim(new ErpProContext(),new ErpPro102SEntities(),new Numaralar(),new Formlar() );
+            if (secim)
+            {
+                frm.Secim = true;
+                frm.ShowDialog();
+            }
+
+            else
+            {
+                frm.MdiParent = Form.ActiveForm;
+                frm.Show();
+            }
+            return AnaSayfa.Aktarma;
+        }
+
+
+       
+
+        public int KonsinyeGonderimListesiAc(bool secim = false)
+        {
+            KonsinyeGonderimListe frm = new KonsinyeGonderimListe(new ErpProContext());
+            
+            if (secim)
+            {
+                frm.Secim = true;
+                frm.ShowDialog();
+            }
+            else
+            {
+                frm.MdiParent = Form.ActiveForm;
+                //frm.Secim = true;
+                frm.Show();
+            }
+
             return AnaSayfa.Aktarma;
         }
     }

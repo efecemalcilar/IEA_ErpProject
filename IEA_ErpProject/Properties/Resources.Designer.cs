@@ -63,6 +63,26 @@ namespace IEA_ErpProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _800px_COLOURBOX5590477 {
+            get {
+                object obj = ResourceManager.GetObject("800px_COLOURBOX5590477", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _8mart {
+            get {
+                object obj = ResourceManager.GetObject("8mart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Ara32x32 {
             get {
                 object obj = ResourceManager.GetObject("Ara32x32", resourceCulture);
@@ -96,6 +116,16 @@ namespace IEA_ErpProject.Properties {
         internal static System.Drawing.Bitmap exit_64 {
             get {
                 object obj = ResourceManager.GetObject("exit-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
