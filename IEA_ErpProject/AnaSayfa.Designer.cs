@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaSayfa));
             this.tabPGenel = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -189,8 +190,15 @@
             // tvMenu
             // 
             this.tvMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tvMenu.ImageIndex = 0;
+            this.tvMenu.ImageList = this.ımageList1;
             this.tvMenu.Location = new System.Drawing.Point(0, 0);
             this.tvMenu.Name = "tvMenu";
+            this.tvMenu.SelectedImageIndex = 1;
+            this.tvMenu.ShowLines = false;
+            this.tvMenu.ShowPlusMinus = false;
+            this.tvMenu.ShowRootLines = false;
             this.tvMenu.Size = new System.Drawing.Size(470, 263);
             this.tvMenu.TabIndex = 0;
             this.tvMenu.DoubleClick += new System.EventHandler(this.tvMenu_DoubleClick);
@@ -209,9 +217,10 @@
             // 
             // btnBilgiGiris
             // 
+            this.btnBilgiGiris.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnBilgiGiris.Location = new System.Drawing.Point(3, 3);
             this.btnBilgiGiris.Name = "btnBilgiGiris";
-            this.btnBilgiGiris.Size = new System.Drawing.Size(79, 52);
+            this.btnBilgiGiris.Size = new System.Drawing.Size(83, 52);
             this.btnBilgiGiris.TabIndex = 0;
             this.btnBilgiGiris.Text = "Bilgi Giris Islemleri";
             this.btnBilgiGiris.UseVisualStyleBackColor = true;
@@ -219,9 +228,10 @@
             // 
             // btnUrunGiris
             // 
-            this.btnUrunGiris.Location = new System.Drawing.Point(88, 3);
+            this.btnUrunGiris.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUrunGiris.Location = new System.Drawing.Point(92, 3);
             this.btnUrunGiris.Name = "btnUrunGiris";
-            this.btnUrunGiris.Size = new System.Drawing.Size(79, 52);
+            this.btnUrunGiris.Size = new System.Drawing.Size(83, 52);
             this.btnUrunGiris.TabIndex = 1;
             this.btnUrunGiris.Text = "Urun Islemleri";
             this.btnUrunGiris.UseVisualStyleBackColor = true;
@@ -229,9 +239,10 @@
             // 
             // BtnStokIslemleri
             // 
-            this.BtnStokIslemleri.Location = new System.Drawing.Point(173, 3);
+            this.BtnStokIslemleri.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnStokIslemleri.Location = new System.Drawing.Point(181, 3);
             this.BtnStokIslemleri.Name = "BtnStokIslemleri";
-            this.BtnStokIslemleri.Size = new System.Drawing.Size(75, 52);
+            this.BtnStokIslemleri.Size = new System.Drawing.Size(79, 52);
             this.BtnStokIslemleri.TabIndex = 2;
             this.BtnStokIslemleri.Text = "Stok Durum";
             this.BtnStokIslemleri.UseVisualStyleBackColor = true;
@@ -239,9 +250,10 @@
             // 
             // BtnKonsinye
             // 
-            this.BtnKonsinye.Location = new System.Drawing.Point(254, 3);
+            this.BtnKonsinye.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnKonsinye.Location = new System.Drawing.Point(266, 3);
             this.BtnKonsinye.Name = "BtnKonsinye";
-            this.BtnKonsinye.Size = new System.Drawing.Size(75, 52);
+            this.BtnKonsinye.Size = new System.Drawing.Size(79, 52);
             this.BtnKonsinye.TabIndex = 2;
             this.BtnKonsinye.Text = "Konsinye Islemleri";
             this.BtnKonsinye.UseVisualStyleBackColor = true;
@@ -283,7 +295,7 @@
             this.lblMenu.Size = new System.Drawing.Size(438, 33);
             this.lblMenu.TabIndex = 2;
             this.lblMenu.Text = "****";
-            this.lblMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnSolUstAra
             // 
@@ -324,9 +336,10 @@
             // 
             // ımageList1
             // 
-            this.ımageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.ımageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
+            this.ımageList1.TransparentColor = System.Drawing.Color.Black;
+            this.ımageList1.Images.SetKeyName(0, "kapaliklasör.jpg");
+            this.ımageList1.Images.SetKeyName(1, "acikklasör.png");
             // 
             // AnaSayfa
             // 

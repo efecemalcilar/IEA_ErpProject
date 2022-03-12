@@ -25,7 +25,7 @@ namespace ProjeAtHome.BilgiGiris.Urunler
 
         private void UrunKayitListesi_Load(object sender, EventArgs e)
         {
-            TxtUrunId.Text = 
+            
         }
     }
 }

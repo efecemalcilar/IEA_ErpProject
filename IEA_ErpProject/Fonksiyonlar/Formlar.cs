@@ -4,6 +4,7 @@ using IEA_ErpProject.BilgiGiris.Hastaneler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -196,7 +197,7 @@ namespace IEA_ErpProject.Fonksiyonlar
         public int KonsinyeGonderimAc(bool secim = false)
         {
 
-            KonsinyeGonderim frm = new KonsinyeGonderim(new ErpProContext(),new ErpPro102SEntities());
+            KonsinyeGonderim frm = new KonsinyeGonderim(new ErpProContext(),new ErpPro102SEntities(),new Numaralar(),new Formlar() );
             if (secim)
             {
                 frm.Secim = true;
@@ -211,5 +212,26 @@ namespace IEA_ErpProject.Fonksiyonlar
             return AnaSayfa.Aktarma;
         }
 
+
+       
+
+        public int KonsinyeGonderimListesiAc(bool secim = false)
+        {
+            KonsinyeGonderimListe frm = new KonsinyeGonderimListe(new ErpProContext());
+            
+            if (secim)
+            {
+                frm.Secim = true;
+                frm.ShowDialog();
+            }
+            else
+            {
+                frm.MdiParent = Form.ActiveForm;
+                //frm.Secim = true;
+                frm.Show();
+            }
+
+            return AnaSayfa.Aktarma;
+        }
     }
 }

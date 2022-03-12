@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.BtnRowsDelete = new System.Windows.Forms.Button();
             this.EtiketId = new System.Windows.Forms.Label();
@@ -45,6 +45,8 @@
             this.TxtCariTur = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.PnlListe = new System.Windows.Forms.Panel();
+            this.BtnAddListeRow1 = new System.Windows.Forms.Button();
+            this.BtnAddListeRow = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.Liste = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,8 +66,6 @@
             this.TxtKonGonderimId = new System.Windows.Forms.TextBox();
             this.SpcUrunGiris = new System.Windows.Forms.SplitContainer();
             this.PnlUst = new System.Windows.Forms.Panel();
-            this.BtnAddListeRow1 = new System.Windows.Forms.Button();
-            this.BtnAddListeRow = new System.Windows.Forms.Button();
             this.BtnKapat = new System.Windows.Forms.Button();
             this.BtnTemiz = new System.Windows.Forms.Button();
             this.BtnTemizle = new System.Windows.Forms.Button();
@@ -84,7 +84,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Beige;
-            this.button1.Location = new System.Drawing.Point(804, 0);
+            this.button1.Location = new System.Drawing.Point(967, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(77, 31);
             this.button1.TabIndex = 7;
@@ -105,7 +105,7 @@
             // 
             this.EtiketId.BackColor = System.Drawing.Color.Beige;
             this.EtiketId.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.EtiketId.Location = new System.Drawing.Point(510, 1);
+            this.EtiketId.Location = new System.Drawing.Point(501, 5);
             this.EtiketId.Name = "EtiketId";
             this.EtiketId.Size = new System.Drawing.Size(159, 28);
             this.EtiketId.TabIndex = 1;
@@ -248,8 +248,28 @@
             this.PnlListe.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlListe.Location = new System.Drawing.Point(0, 0);
             this.PnlListe.Name = "PnlListe";
-            this.PnlListe.Size = new System.Drawing.Size(1136, 34);
+            this.PnlListe.Size = new System.Drawing.Size(1136, 51);
             this.PnlListe.TabIndex = 2;
+            // 
+            // BtnAddListeRow1
+            // 
+            this.BtnAddListeRow1.BackgroundImage = global::IEA_ErpProject.Properties.Resources.plusicon;
+            this.BtnAddListeRow1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnAddListeRow1.Location = new System.Drawing.Point(1082, 2);
+            this.BtnAddListeRow1.Name = "BtnAddListeRow1";
+            this.BtnAddListeRow1.Size = new System.Drawing.Size(43, 31);
+            this.BtnAddListeRow1.TabIndex = 8;
+            this.BtnAddListeRow1.UseVisualStyleBackColor = true;
+            // 
+            // BtnAddListeRow
+            // 
+            this.BtnAddListeRow.BackgroundImage = global::IEA_ErpProject.Properties.Resources.plusicon;
+            this.BtnAddListeRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnAddListeRow.Location = new System.Drawing.Point(1358, 0);
+            this.BtnAddListeRow.Name = "BtnAddListeRow";
+            this.BtnAddListeRow.Size = new System.Drawing.Size(43, 31);
+            this.BtnAddListeRow.TabIndex = 6;
+            this.BtnAddListeRow.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -267,14 +287,14 @@
             // 
             // Liste
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Liste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Liste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Liste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Liste.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -290,27 +310,27 @@
             this.UTarih,
             this.SKTarihi,
             this.Durum});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Liste.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Liste.DefaultCellStyle = dataGridViewCellStyle2;
             this.Liste.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Liste.Location = new System.Drawing.Point(0, 34);
+            this.Liste.Location = new System.Drawing.Point(0, 51);
             this.Liste.Name = "Liste";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Liste.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Liste.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.Liste.RowHeadersVisible = false;
-            this.Liste.Size = new System.Drawing.Size(1136, 553);
+            this.Liste.Size = new System.Drawing.Size(1136, 536);
             this.Liste.TabIndex = 0;
             this.Liste.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.Liste_EditingControlShowing);
             this.Liste.SelectionChanged += new System.EventHandler(this.Liste_SelectionChanged);
@@ -321,7 +341,6 @@
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             this.Id.Visible = false;
-            this.Id.Width = 22;
             // 
             // Sira
             // 
@@ -329,7 +348,6 @@
             this.Sira.HeaderText = "Sira";
             this.Sira.Name = "Sira";
             this.Sira.Visible = false;
-            this.Sira.Width = 31;
             // 
             // Barkod
             // 
@@ -377,7 +395,6 @@
             this.UrunId.HeaderText = "Urun Id";
             this.UrunId.Name = "UrunId";
             this.UrunId.Visible = false;
-            this.UrunId.Width = 67;
             // 
             // Uts
             // 
@@ -479,26 +496,6 @@
             this.PnlUst.Size = new System.Drawing.Size(1446, 57);
             this.PnlUst.TabIndex = 2;
             // 
-            // BtnAddListeRow1
-            // 
-            this.BtnAddListeRow1.BackgroundImage = global::IEA_ErpProject.Properties.Resources.plusicon;
-            this.BtnAddListeRow1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnAddListeRow1.Location = new System.Drawing.Point(919, 0);
-            this.BtnAddListeRow1.Name = "BtnAddListeRow1";
-            this.BtnAddListeRow1.Size = new System.Drawing.Size(43, 31);
-            this.BtnAddListeRow1.TabIndex = 8;
-            this.BtnAddListeRow1.UseVisualStyleBackColor = true;
-            // 
-            // BtnAddListeRow
-            // 
-            this.BtnAddListeRow.BackgroundImage = global::IEA_ErpProject.Properties.Resources.plusicon;
-            this.BtnAddListeRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnAddListeRow.Location = new System.Drawing.Point(1358, 0);
-            this.BtnAddListeRow.Name = "BtnAddListeRow";
-            this.BtnAddListeRow.Size = new System.Drawing.Size(43, 31);
-            this.BtnAddListeRow.TabIndex = 6;
-            this.BtnAddListeRow.UseVisualStyleBackColor = true;
-            // 
             // BtnKapat
             // 
             this.BtnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -539,6 +536,7 @@
             this.BtnSil.Size = new System.Drawing.Size(49, 43);
             this.BtnSil.TabIndex = 15;
             this.BtnSil.UseVisualStyleBackColor = true;
+            this.BtnSil.Click += new System.EventHandler(this.BtnSil_Click);
             // 
             // BtnKaydet
             // 
@@ -555,6 +553,7 @@
             // 
             this.BtnGüncelle.BackgroundImage = global::IEA_ErpProject.Properties.Resources.Update32x32;
             this.BtnGüncelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnGüncelle.Enabled = false;
             this.BtnGüncelle.Location = new System.Drawing.Point(85, 12);
             this.BtnGüncelle.Name = "BtnGüncelle";
             this.BtnGüncelle.Size = new System.Drawing.Size(49, 43);

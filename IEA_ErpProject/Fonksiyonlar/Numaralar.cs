@@ -6,13 +6,14 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using IEA_ErpProject.Entity;
+using IEA_ErpProject.Entity.Code;
 
 namespace IEA_ErpProject.Fonksiyonlar
 {
     public class Numaralar
     {
         private readonly ErpPro102SEntities _db = new ErpPro102SEntities();
-
+        private readonly ErpProContext _code = new ErpProContext();
         public string Uidno()
         {
             try
@@ -47,6 +48,26 @@ namespace IEA_ErpProject.Fonksiyonlar
             {
                 return "0000001";
             }
+        }
+
+
+        public string KonGonderimNo()
+        {
+            try
+            {
+                var numara = (from s in _code.TblKonsinyeGonderimler orderby s.Id descending select s).First().GonderimId;
+
+                numara++;
+
+                //string num = numara.ToString().PadLeft(7, '0');
+                return numara.ToString().PadLeft(7, '0');
+            }
+            catch (Exception e)
+            {
+                return "0000001";
+            }
+            
+
         }
 
     }

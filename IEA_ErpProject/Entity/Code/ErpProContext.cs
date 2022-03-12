@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace IEA_ErpProject.Entity.Code
 {
@@ -15,11 +16,39 @@ namespace IEA_ErpProject.Entity.Code
             Database.SetInitializer(new MyInitializer()); // 
         }
 
-
+        
         public DbSet<tblUser> TblUsers { get; set; }  //DBset databse de ki karşılaştırmamızı yapacak
 
-        public DbSet<tblKonsinyeGonderim> TblKonsinyeGonderimler { get; set; } //Bu kod Declare işlemi yapıyor, amac db deki tblkonsinyegonderi class olarak kullanmaya yarıyor.
+        public DbSet<tblKonsinyeGonderim> TblKonsinyeGonderimler { get; set; } //Bu kod Declare işlemi yapıyor, amac db deki tblKonsinyeGonderi class olarak kullanmaya yarıyor.
 
-       
+        AnaSayfa ana = Application.OpenForms["AnaSayfa"] as AnaSayfa; // anasayfa ana = new anasayfa yerine  yaptık cünkü üst kısımdan createduser tarafından isim değil de *** ı alıyordu.
+
+        public override int SaveChanges()
+        {
+            var datas=ChangeTracker.Entries<BaseEntity>();              // varlıklarımdan BaseEntity e ulaşacağım.  changetracker coklu bir yapı döndürebilir. Base entities içerisinde ki değişikleri datas a attım. ChangeTracker İşlemleri hafızasına alıyor ve savechages i çalıştırdıgımda changetracker sira sira işlemleri db ye aktarır.
+
+            foreach (var data in datas)
+            {
+
+                if (data.State==EntityState.Added)
+                {
+                    data.Entity.CreatedDate=DateTime.Now;
+                    data.Entity.CreatedUser = ana.LblUserNickName.Text;
+                    data.Entity.isDeleted = false;
+
+                }
+
+                else if (data.State==EntityState.Modified)
+                {
+                    data.Entity.UpdatedDate = DateTime.Now;
+                    data.Entity.UpdatedUser = ana.LblUserNickName.Text;
+                }
+            }
+
+            return base.SaveChanges(); // Ana yapmasını ıstedıgım ise devam etmesini istedim.
+
+        }
+
+        //ChangeTracker Entitiyler üzerinde yapilan değişiklerin yada yeni eklenen verinin yakalanmasını sağlayan propertydir.
     }
 }

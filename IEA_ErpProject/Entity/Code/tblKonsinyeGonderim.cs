@@ -12,7 +12,7 @@ namespace IEA_ErpProject.Entity.Code
     [Table("tblKonsinyeGonderimler")]
     public class tblKonsinyeGonderim :BaseEntity  // Inheritance Miras alma. BaseEntity de ki bütün propertyler burası calıstıgında buranın ıcerisine yerleşecek.
     {
-        
+        public int GonderimId { get; set; }
         [StringLength(15)]
         public string CariTur { get; set; }       // Inheritance farklı farklı classlarda ortak kullanılabiliyor. Inheritler 1 kere kullanılabiliyor.
         
